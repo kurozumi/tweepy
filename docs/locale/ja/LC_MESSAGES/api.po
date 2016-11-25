@@ -1,0 +1,1023 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2009, Joshua Roesslein
+# This file is distributed under the same license as the tweepy package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2016.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tweepy 3.6.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-11-24 23:01+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.3.4\n"
+
+#: ../../api.rst:6
+msgid "API Reference"
+msgstr ""
+
+#: ../../api.rst:8
+msgid "This page contains some basic documentation for the Tweepy module."
+msgstr ""
+
+#: ../../api.rst:12
+msgid ":mod:`tweepy.api` --- Twitter API wrapper"
+msgstr ""
+
+#: ../../api.rst:16
+msgid ""
+"This class provides a wrapper for the API as provided by Twitter. The "
+"functions provided in this class are listed below."
+msgstr ""
+
+#: ../../api.rst:19
+msgid "authentication handler to be used"
+msgstr ""
+
+#: ../../api.rst:20
+msgid "general API host"
+msgstr ""
+
+#: ../../api.rst:21
+msgid "search API host"
+msgstr ""
+
+#: ../../api.rst:22
+msgid "cache backend to use"
+msgstr ""
+
+#: ../../api.rst:23
+msgid "general API path root"
+msgstr ""
+
+#: ../../api.rst:24
+msgid "search API path root"
+msgstr ""
+
+#: ../../api.rst:25
+msgid "default number of retries to attempt when error occurs"
+msgstr ""
+
+#: ../../api.rst:26
+msgid "number of seconds to wait between retries"
+msgstr ""
+
+#: ../../api.rst:27
+msgid "which HTTP status codes to retry"
+msgstr ""
+
+#: ../../api.rst:28
+msgid "The maximum amount of time to wait for a response from Twitter"
+msgstr ""
+
+#: ../../api.rst:29
+msgid "The object to use for parsing the response from Twitter"
+msgstr ""
+
+#: ../../api.rst:30
+msgid "Whether or not to use GZIP compression for requests"
+msgstr ""
+
+#: ../../api.rst:31
+msgid "Whether or not to automatically wait for rate limits to replenish"
+msgstr ""
+
+#: ../../api.rst:32
+msgid ""
+"Whether or not to print a notification when Tweepy is waiting for rate "
+"limits to replenish"
+msgstr ""
+
+#: ../../api.rst:33
+msgid "The full url to an HTTPS proxy to use for connecting to Twitter."
+msgstr ""
+
+#: ../../api.rst:36
+msgid "Timeline methods"
+msgstr ""
+
+#: ../../api.rst:40
+msgid ""
+"Returns the 20 most recent statuses, including retweets, posted by the "
+"authenticating user and that user's friends. This is the equivalent of "
+"/timeline/home on the Web."
+msgstr ""
+
+#: ../../api.rst:44 ../../api.rst:71 ../../api.rst:83 ../../api.rst:225
+#: ../../api.rst:246 ../../api.rst:552 ../../api.rst:624
+msgid "|since_id|"
+msgstr ""
+
+#: ../../api.rst:45 ../../api.rst:72 ../../api.rst:84 ../../api.rst:226
+#: ../../api.rst:247 ../../api.rst:625
+msgid "|max_id|"
+msgstr ""
+
+#: ../../api.rst:46 ../../api.rst:73 ../../api.rst:85 ../../api.rst:227
+#: ../../api.rst:248
+msgid "|count|"
+msgstr ""
+
+#: ../../api.rst:47 ../../api.rst:74 ../../api.rst:86 ../../api.rst:214
+#: ../../api.rst:228 ../../api.rst:249 ../../api.rst:426 ../../api.rst:478
+#: ../../api.rst:627
+msgid "|page|"
+msgstr ""
+
+#: ../../api.rst:48 ../../api.rst:59 ../../api.rst:75 ../../api.rst:87
+#: ../../api.rst:156 ../../api.rst:427 ../../api.rst:628
+msgid "list of :class:`Status` objects"
+msgstr ""
+
+#: ../../api.rst:52
+msgid ""
+"Returns full Tweet objects for up to 100 tweets per request, specified by"
+" the `id` parameter."
+msgstr ""
+
+#: ../../api.rst:55
+msgid "A list of Tweet IDs to lookup, up to 100"
+msgstr ""
+
+#: ../../api.rst:56
+msgid ""
+"A boolean indicating whether or not to include "
+"[entities](https://dev.twitter.com/docs/entities) in the returned tweets."
+" Defaults to False."
+msgstr ""
+
+#: ../../api.rst:57
+msgid ""
+"A boolean indicating if user IDs should be provided, instead of full user"
+" information. Defaults to False."
+msgstr ""
+
+#: ../../api.rst:58
+msgid ""
+"A boolean indicating whether or not to include tweets that cannot be "
+"shown, but with a value of None. Defaults to False."
+msgstr ""
+
+#: ../../api.rst:64
+msgid ""
+"Returns the 20 most recent statuses posted from the authenticating user "
+"or the user specified. It's also possible to request another user's "
+"timeline via the id parameter."
+msgstr ""
+
+#: ../../api.rst:68 ../../api.rst:166 ../../api.rst:198 ../../api.rst:281
+#: ../../api.rst:292 ../../api.rst:324 ../../api.rst:336 ../../api.rst:456
+#: ../../api.rst:467 ../../api.rst:498
+msgid "|uid|"
+msgstr ""
+
+#: ../../api.rst:69 ../../api.rst:167 ../../api.rst:199 ../../api.rst:283
+#: ../../api.rst:294 ../../api.rst:326 ../../api.rst:338 ../../api.rst:458
+#: ../../api.rst:469 ../../api.rst:500
+msgid "|user_id|"
+msgstr ""
+
+#: ../../api.rst:70 ../../api.rst:168 ../../api.rst:200 ../../api.rst:282
+#: ../../api.rst:293 ../../api.rst:325 ../../api.rst:337 ../../api.rst:457
+#: ../../api.rst:468 ../../api.rst:499
+msgid "|screen_name|"
+msgstr ""
+
+#: ../../api.rst:80
+msgid ""
+"Returns the 20 most recent tweets of the authenticated user that have "
+"been retweeted by others."
+msgstr ""
+
+#: ../../api.rst:91
+msgid "Status methods"
+msgstr ""
+
+#: ../../api.rst:95
+msgid "Returns a single status specified by the ID parameter."
+msgstr ""
+
+#: ../../api.rst:97 ../../api.rst:138 ../../api.rst:146 ../../api.rst:154
+#: ../../api.rst:435 ../../api.rst:444
+msgid "|sid|"
+msgstr ""
+
+#: ../../api.rst:98 ../../api.rst:113 ../../api.rst:130 ../../api.rst:139
+#: ../../api.rst:147 ../../api.rst:436 ../../api.rst:445
+msgid ":class:`Status` object"
+msgstr ""
+
+#: ../../api.rst:103 ../../api.rst:118
+msgid ""
+"Update the authenticated user's status. Statuses that are duplicates or "
+"too long will be silently ignored."
+msgstr ""
+
+#: ../../api.rst:106 ../../api.rst:122
+msgid "The text of your status update."
+msgstr ""
+
+#: ../../api.rst:107 ../../api.rst:123
+msgid "The ID of an existing status that the update is in reply to."
+msgstr ""
+
+#: ../../api.rst:108 ../../api.rst:124
+msgid "Whether to automatically include the @mentions in the status metadata."
+msgstr ""
+
+#: ../../api.rst:109 ../../api.rst:125
+msgid "The location's latitude that this tweet refers to."
+msgstr ""
+
+#: ../../api.rst:110 ../../api.rst:126
+msgid "The location's longitude that this tweet refers to."
+msgstr ""
+
+#: ../../api.rst:111 ../../api.rst:127
+msgid ""
+"Source of the update. Only supported by Identi.ca. Twitter ignores this "
+"parameter."
+msgstr ""
+
+#: ../../api.rst:112 ../../api.rst:128
+msgid ""
+"Twitter ID of location which is listed in the Tweet if geolocation is "
+"enabled for the user."
+msgstr ""
+
+#: ../../api.rst:121
+msgid ""
+"The filename of the image to upload. This will automatically be opened "
+"unless `file` is specified"
+msgstr ""
+
+#: ../../api.rst:129
+msgid ""
+"A file object, which will be used instead of opening `filename`. "
+"`filename` is still required, for MIME type detection and to use as a "
+"form field in the POST data"
+msgstr ""
+
+#: ../../api.rst:135
+msgid ""
+"Destroy the status specified by the id parameter. The authenticated user "
+"must be the author of the status to destroy."
+msgstr ""
+
+#: ../../api.rst:144
+msgid "Retweets a tweet. Requires the id of the tweet you are retweeting."
+msgstr ""
+
+#: ../../api.rst:152
+msgid "Returns up to 100 of the first retweets of the given tweet."
+msgstr ""
+
+#: ../../api.rst:155
+msgid "Specifies the number of retweets to retrieve."
+msgstr ""
+
+#: ../../api.rst:160
+msgid "User methods"
+msgstr ""
+
+#: ../../api.rst:164
+msgid "Returns information about the specified user."
+msgstr ""
+
+#: ../../api.rst:169 ../../api.rst:176 ../../api.rst:285 ../../api.rst:295
+#: ../../api.rst:371 ../../api.rst:384 ../../api.rst:393 ../../api.rst:402
+#: ../../api.rst:414 ../../api.rst:459 ../../api.rst:470 ../../api.rst:501
+msgid ":class:`User` object"
+msgstr ""
+
+#: ../../api.rst:174
+msgid "Returns the authenticated user's information."
+msgstr ""
+
+#: ../../api.rst:194
+msgid ""
+"Returns an user's followers ordered in which they were added 100 at a "
+"time. If no user is specified by id/screen name, it defaults to the "
+"authenticated user."
+msgstr ""
+
+#: ../../api.rst:201 ../../api.rst:327 ../../api.rst:339 ../../api.rst:598
+#: ../../api.rst:606 ../../api.rst:614 ../../api.rst:667 ../../api.rst:705
+msgid "|cursor|"
+msgstr ""
+
+#: ../../api.rst:202 ../../api.rst:215 ../../api.rst:479 ../../api.rst:668
+#: ../../api.rst:706
+msgid "list of :class:`User` objects"
+msgstr ""
+
+#: ../../api.rst:206
+msgid ""
+"Run a search for users similar to Find People button on Twitter.com; the "
+"same results returned by people search on Twitter.com will be returned by"
+" using this API (about being listed in the People Search). It is only "
+"possible to retrieve the first 1000 matches from this API."
+msgstr ""
+
+#: ../../api.rst:212
+msgid "The query to run against people search."
+msgstr ""
+
+#: ../../api.rst:213
+msgid "Specifies the number of statuses to retrieve. May not be greater than 20."
+msgstr ""
+
+#: ../../api.rst:219
+msgid "Direct Message Methods"
+msgstr ""
+
+#: ../../api.rst:223
+msgid "Returns direct messages sent to the authenticating user."
+msgstr ""
+
+#: ../../api.rst:229 ../../api.rst:238 ../../api.rst:250
+msgid "|full_text|"
+msgstr ""
+
+#: ../../api.rst:230 ../../api.rst:251
+msgid "list of :class:`DirectMessage` objects"
+msgstr ""
+
+#: ../../api.rst:235
+msgid "Returns a specific direct message."
+msgstr ""
+
+#: ../../api.rst:237
+msgid "|id|"
+msgstr ""
+
+#: ../../api.rst:239 ../../api.rst:262 ../../api.rst:271
+msgid ":class:`DirectMessage` object"
+msgstr ""
+
+#: ../../api.rst:244
+msgid "Returns direct messages sent by the authenticating user."
+msgstr ""
+
+#: ../../api.rst:256
+msgid ""
+"Sends a new direct message to the specified user from the authenticating "
+"user."
+msgstr ""
+
+#: ../../api.rst:259
+msgid "The ID or screen name of the recipient user."
+msgstr ""
+
+#: ../../api.rst:260
+msgid "screen name of the recipient user"
+msgstr ""
+
+#: ../../api.rst:261
+msgid "user id of the recipient user"
+msgstr ""
+
+#: ../../api.rst:267
+msgid ""
+"Destroy a direct message. Authenticating user must be the recipient of "
+"the direct message."
+msgstr ""
+
+#: ../../api.rst:270
+msgid "The ID of the direct message to destroy."
+msgstr ""
+
+#: ../../api.rst:275
+msgid "Friendship Methods"
+msgstr ""
+
+#: ../../api.rst:279
+msgid "Create a new friendship with the specified user (aka follow)."
+msgstr ""
+
+#: ../../api.rst:284
+msgid "Enable notifications for the target user in addition to becoming friends."
+msgstr ""
+
+#: ../../api.rst:290
+msgid "Destroy a friendship with the specified user (aka unfollow)."
+msgstr ""
+
+#: ../../api.rst:300
+msgid ""
+"Checks if a friendship exists between two users. Will return True if "
+"user_a follows user_b, otherwise False."
+msgstr ""
+
+#: ../../api.rst:303
+msgid "The ID or screen_name of the subject user."
+msgstr ""
+
+#: ../../api.rst:304
+msgid "The ID or screen_name of the user to test for following."
+msgstr ""
+
+#: ../../api.rst:310
+msgid "Returns detailed information about the relationship between two users."
+msgstr ""
+
+#: ../../api.rst:312
+msgid "The user_id of the subject user."
+msgstr ""
+
+#: ../../api.rst:313
+msgid "The screen_name of the subject user."
+msgstr ""
+
+#: ../../api.rst:314
+msgid "The user_id of the target user."
+msgstr ""
+
+#: ../../api.rst:315
+msgid "The screen_name of the target user."
+msgstr ""
+
+#: ../../api.rst:316
+msgid ":class:`Friendship` object"
+msgstr ""
+
+#: ../../api.rst:321
+msgid ""
+"Returns an array containing the IDs of users being followed by the "
+"specified user."
+msgstr ""
+
+#: ../../api.rst:333
+msgid "Returns an array containing the IDs of users following the specified user."
+msgstr ""
+
+#: ../../api.rst:344
+msgid "Account Methods"
+msgstr ""
+
+#: ../../api.rst:348
+msgid "Verify the supplied user credentials are valid."
+msgstr ""
+
+#: ../../api.rst:350
+msgid ":class:`User` object if credentials are valid, otherwise False"
+msgstr ""
+
+#: ../../api.rst:355
+msgid ""
+"Returns the remaining number of API requests available to the requesting "
+"user before the API limit is reached for the current hour. Calls to "
+"rate_limit_status do not count against the rate limit. If authentication "
+"credentials are provided, the rate limit status for the authenticating "
+"user is returned. Otherwise, the rate limit status for the requester's IP"
+" address is returned."
+msgstr ""
+
+#: ../../api.rst:362 ../../api.rst:726 ../../api.rst:739 ../../api.rst:751
+msgid ":class:`JSON` object"
+msgstr ""
+
+#: ../../api.rst:367
+msgid ""
+"Sets which device Twitter delivers updates to for the authenticating "
+"user. Sending \"none\" as the device parameter will disable SMS updates."
+msgstr ""
+
+#: ../../api.rst:370
+msgid "Must be one of: sms, none"
+msgstr ""
+
+#: ../../api.rst:376
+msgid ""
+"Sets one or more hex values that control the color scheme of the "
+"authenticating user's profile page on twitter.com."
+msgstr ""
+
+#: ../../api.rst:389
+msgid ""
+"Update the authenticating user's profile image. Valid formats: GIF, JPG, "
+"or PNG"
+msgstr ""
+
+#: ../../api.rst:392 ../../api.rst:401
+msgid "local path to image file to upload. Not a remote URL!"
+msgstr ""
+
+#: ../../api.rst:398
+msgid ""
+"Update authenticating user's background image. Valid formats: GIF, JPG, "
+"or PNG"
+msgstr ""
+
+#: ../../api.rst:407
+msgid ""
+"Sets values that users are able to set under the \"Account\" tab of their"
+" settings page."
+msgstr ""
+
+#: ../../api.rst:410
+msgid "Maximum of 20 characters"
+msgstr ""
+
+#: ../../api.rst:411
+msgid ""
+"Maximum of 100 characters. Will be prepended with \"http://\" if not "
+"present"
+msgstr ""
+
+#: ../../api.rst:412
+msgid "Maximum of 30 characters"
+msgstr ""
+
+#: ../../api.rst:413
+msgid "Maximum of 160 characters"
+msgstr ""
+
+#: ../../api.rst:418
+msgid "Favorite Methods"
+msgstr ""
+
+#: ../../api.rst:422
+msgid ""
+"Returns the favorite statuses for the authenticating user or user "
+"specified by the ID parameter."
+msgstr ""
+
+#: ../../api.rst:425
+msgid "The ID or screen name of the user to request favorites"
+msgstr ""
+
+#: ../../api.rst:432
+msgid ""
+"Favorites the status specified in the ID parameter as the authenticating "
+"user."
+msgstr ""
+
+#: ../../api.rst:441
+msgid ""
+"Un-favorites the status specified in the ID parameter as the "
+"authenticating user."
+msgstr ""
+
+#: ../../api.rst:449
+msgid "Block Methods"
+msgstr ""
+
+#: ../../api.rst:453
+msgid ""
+"Blocks the user specified in the ID parameter as the authenticating user."
+" Destroys a friendship to the blocked user if it exists."
+msgstr ""
+
+#: ../../api.rst:464
+msgid ""
+"Un-blocks the user specified in the ID parameter for the authenticating "
+"user."
+msgstr ""
+
+#: ../../api.rst:475
+msgid "Returns an array of user objects that the authenticating user is blocking."
+msgstr ""
+
+#: ../../api.rst:484
+msgid "Returns an array of numeric user ids the authenticating user is blocking."
+msgstr ""
+
+#: ../../api.rst:491
+msgid "Spam Reporting Methods"
+msgstr ""
+
+#: ../../api.rst:495
+msgid ""
+"The user specified in the id is blocked by the authenticated user and "
+"reported as a spammer."
+msgstr ""
+
+#: ../../api.rst:505
+msgid "Saved Searches Methods"
+msgstr ""
+
+#: ../../api.rst:509
+msgid "Returns the authenticated user's saved search queries."
+msgstr ""
+
+#: ../../api.rst:511
+msgid "list of :class:`SavedSearch` objects"
+msgstr ""
+
+#: ../../api.rst:516
+msgid ""
+"Retrieve the data for a saved search owned by the authenticating user "
+"specified by the given id."
+msgstr ""
+
+#: ../../api.rst:519
+msgid "The id of the saved search to be retrieved."
+msgstr ""
+
+#: ../../api.rst:520 ../../api.rst:528 ../../api.rst:537
+msgid ":class:`SavedSearch` object"
+msgstr ""
+
+#: ../../api.rst:525
+msgid "Creates a saved search for the authenticated user."
+msgstr ""
+
+#: ../../api.rst:527
+msgid "The query of the search the user would like to save."
+msgstr ""
+
+#: ../../api.rst:533
+msgid ""
+"Destroys a saved search for the authenticated user. The search specified "
+"by id must be owned by the authenticating user."
+msgstr ""
+
+#: ../../api.rst:536
+msgid "The id of the saved search to be deleted."
+msgstr ""
+
+#: ../../api.rst:541
+msgid "Help Methods"
+msgstr ""
+
+#: ../../api.rst:545
+msgid "Returns tweets that match a specified query."
+msgstr ""
+
+#: ../../api.rst:547
+msgid "the search query string"
+msgstr ""
+
+#: ../../api.rst:548
+msgid "Restricts tweets to the given language, given by an ISO 639-1 code."
+msgstr ""
+
+#: ../../api.rst:549
+msgid ""
+"Specify the language of the query you are sending. This is intended for "
+"language-specific clients and the default should work in the majority of "
+"cases."
+msgstr ""
+
+#: ../../api.rst:550
+msgid "The number of tweets to return per page, up to a max of 100."
+msgstr ""
+
+#: ../../api.rst:551
+msgid ""
+"The page number (starting at 1) to return, up to a max of roughly 1500 "
+"results (based on rpp * page."
+msgstr ""
+
+#: ../../api.rst:553
+msgid ""
+"Returns tweets by users located within a given radius of the given "
+"latitude/longitude.  The location is preferentially taking from the "
+"Geotagging API, but will fall back to their Twitter profile. The "
+"parameter value is specified by \"latitide,longitude,radius\", where "
+"radius units must be specified as either \"mi\" (miles) or \"km\" "
+"(kilometers). Note that you cannot use the near operator via the API to "
+"geocode arbitrary locations; however you can use this geocode parameter "
+"to search near geocodes directly."
+msgstr ""
+
+#: ../../api.rst:554
+msgid ""
+"When true, prepends \"<user>:\" to the beginning of the tweet. This is "
+"useful for readers that do not display Atom's author field. The default "
+"is false."
+msgstr ""
+
+#: ../../api.rst:555
+msgid "list of :class:`SearchResult` objects"
+msgstr ""
+
+#: ../../api.rst:559
+msgid "List Methods"
+msgstr ""
+
+#: ../../api.rst:563
+msgid ""
+"Creates a new list for the authenticated user. Accounts are limited to 20"
+" lists."
+msgstr ""
+
+#: ../../api.rst:566
+msgid "The name of the new list."
+msgstr ""
+
+#: ../../api.rst:567 ../../api.rst:587
+msgid "|list_mode|"
+msgstr ""
+
+#: ../../api.rst:568
+msgid "The description of the list you are creating."
+msgstr ""
+
+#: ../../api.rst:569 ../../api.rst:577 ../../api.rst:589 ../../api.rst:638
+#: ../../api.rst:648 ../../api.rst:658 ../../api.rst:687 ../../api.rst:696
+msgid ":class:`List` object"
+msgstr ""
+
+#: ../../api.rst:574
+msgid "Deletes the specified list. Must be owned by the authenticated user."
+msgstr ""
+
+#: ../../api.rst:576 ../../api.rst:585 ../../api.rst:623 ../../api.rst:637
+#: ../../api.rst:646 ../../api.rst:656 ../../api.rst:666 ../../api.rst:676
+#: ../../api.rst:686 ../../api.rst:695 ../../api.rst:704 ../../api.rst:714
+msgid "|slug|"
+msgstr ""
+
+#: ../../api.rst:582
+msgid ""
+"Updates the specified list. Note: this current throws a 500. Twitter is "
+"looking into the issue."
+msgstr ""
+
+#: ../../api.rst:586
+msgid "What you'd like to change the lists name to."
+msgstr ""
+
+#: ../../api.rst:588
+msgid "What you'd like to change the list description to."
+msgstr ""
+
+#: ../../api.rst:594
+msgid ""
+"List the lists of the specified user. Private lists will be included if "
+"the authenticated users is the same as the user who's lists are being "
+"returned."
+msgstr ""
+
+#: ../../api.rst:599 ../../api.rst:607 ../../api.rst:615
+msgid "list of :class:`List` objects"
+msgstr ""
+
+#: ../../api.rst:604
+msgid "List the lists the specified user has been added to."
+msgstr ""
+
+#: ../../api.rst:612
+msgid "List the lists the specified user follows."
+msgstr ""
+
+#: ../../api.rst:620
+msgid "Show tweet timeline for members of the specified list."
+msgstr ""
+
+#: ../../api.rst:622 ../../api.rst:636 ../../api.rst:665 ../../api.rst:675
+#: ../../api.rst:685 ../../api.rst:694 ../../api.rst:703 ../../api.rst:713
+msgid "|list_owner|"
+msgstr ""
+
+#: ../../api.rst:626
+msgid "Number of results per a page"
+msgstr ""
+
+#: ../../api.rst:633
+msgid ""
+"Show the specified list. Private lists will only be shown if the "
+"authenticated user owns the specified list."
+msgstr ""
+
+#: ../../api.rst:643
+msgid ""
+"Add a member to a list. The authenticated user must own the list to be "
+"able to add members to it. Lists are limited to having 500 members."
+msgstr ""
+
+#: ../../api.rst:647
+msgid "the ID of the user to add as a member"
+msgstr ""
+
+#: ../../api.rst:653
+msgid ""
+"Removes the specified member from the list. The authenticated user must "
+"be the list's owner to remove members from the list."
+msgstr ""
+
+#: ../../api.rst:657
+msgid "the ID of the user to remove as a member"
+msgstr ""
+
+#: ../../api.rst:663
+msgid "Returns the members of the specified list."
+msgstr ""
+
+#: ../../api.rst:673
+msgid "Check if a user is a member of the specified list."
+msgstr ""
+
+#: ../../api.rst:677 ../../api.rst:715
+msgid "the ID of the user to check"
+msgstr ""
+
+#: ../../api.rst:678
+msgid ":class:`User` object if user is a member of list, otherwise False."
+msgstr ""
+
+#: ../../api.rst:683
+msgid "Make the authenticated user follow the specified list."
+msgstr ""
+
+#: ../../api.rst:692
+msgid "Unsubscribes the authenticated user form the specified list."
+msgstr ""
+
+#: ../../api.rst:701
+msgid "Returns the subscribers of the specified list."
+msgstr ""
+
+#: ../../api.rst:711
+msgid "Check if the specified user is a subscriber of the specified list."
+msgstr ""
+
+#: ../../api.rst:716
+msgid ":class:`User` object if user is subscribed to the list, otherwise False."
+msgstr ""
+
+#: ../../api.rst:720
+msgid "Trends Methods"
+msgstr ""
+
+#: ../../api.rst:724
+msgid ""
+"Returns the locations that Twitter has trending topic information for. "
+"The response is an array of \"locations\" that encode the location's "
+"WOEID (a Yahoo! Where On Earth ID) and some other human-readable "
+"information such as a canonical name and country the location belongs in."
+msgstr ""
+
+#: ../../api.rst:731
+msgid ""
+"Returns the top 10 trending topics for a specific WOEID, if trending "
+"information is available for it."
+msgstr ""
+
+#: ../../api.rst:733
+msgid ""
+"The response is an array of “trend” objects that encode the name of the "
+"trending topic, the query parameter that can be used to search for the "
+"topic on Twitter Search, and the Twitter Search URL."
+msgstr ""
+
+#: ../../api.rst:735
+msgid ""
+"This information is cached for 5 minutes. Requesting more frequently than"
+" that will not return any more data, and will count against your rate "
+"limit usage."
+msgstr ""
+
+#: ../../api.rst:737
+msgid ""
+"The Yahoo! Where On Earth ID of the location to return trending "
+"information for. Global information is available by using 1 as the WOEID."
+msgstr ""
+
+#: ../../api.rst:738
+msgid ""
+"Setting this equal to hashtags will remove all hashtags from the trends "
+"list."
+msgstr ""
+
+#: ../../api.rst:743
+msgid ""
+"Returns the locations that Twitter has trending topic information for, "
+"closest to a specified location."
+msgstr ""
+
+#: ../../api.rst:745
+msgid ""
+"The response is an array of “locations” that encode the location’s WOEID "
+"and some other human-readable information such as a canonical name and "
+"country the location belongs in."
+msgstr ""
+
+#: ../../api.rst:747
+msgid "A WOEID is a Yahoo! Where On Earth ID."
+msgstr ""
+
+#: ../../api.rst:749
+msgid ""
+"If provided with a long parameter the available trend locations will be "
+"sorted by distance, nearest to furthest, to the co-ordinate pair. The "
+"valid ranges for longitude is -180.0 to +180.0 (West is negative, East is"
+" positive) inclusive."
+msgstr ""
+
+#: ../../api.rst:750
+msgid ""
+"If provided with a lat parameter the available trend locations will be "
+"sorted by distance, nearest to furthest, to the co-ordinate pair. The "
+"valid ranges for longitude is -180.0 to +180.0 (West is negative, East is"
+" positive) inclusive."
+msgstr ""
+
+#: ../../api.rst:755
+msgid "Geo Methods"
+msgstr ""
+
+#: ../../api.rst:759
+msgid ""
+"Given a latitude and longitude, looks for places (cities and "
+"neighbourhoods) whose IDs can be specified in a call to "
+":func:`update_status` to appear as the name of the location. This call "
+"provides a detailed response about the location in question; the "
+":func:`nearby_places` function should be preferred for getting a list of "
+"places nearby without great detail."
+msgstr ""
+
+#: ../../api.rst:766 ../../api.rst:781
+msgid "The location's latitude."
+msgstr ""
+
+#: ../../api.rst:767 ../../api.rst:782
+msgid "The location's longitude."
+msgstr ""
+
+#: ../../api.rst:768 ../../api.rst:784
+msgid ""
+"Specify the \"region\" in which to search, such as a number (then this is"
+" a radius in meters, but it can also take a string that is suffixed with "
+"ft to specify feet).  If this is not passed in, then it is assumed to be "
+"0m"
+msgstr ""
+
+#: ../../api.rst:769 ../../api.rst:785
+msgid "Assumed to be `neighborhood' by default; can also be `city'."
+msgstr ""
+
+#: ../../api.rst:770 ../../api.rst:786
+msgid ""
+"A hint as to the maximum number of results to return. This is only a "
+"guideline, which may not be adhered to."
+msgstr ""
+
+#: ../../api.rst:774
+msgid ""
+"Given a latitude and longitude, looks for nearby places (cities and "
+"neighbourhoods) whose IDs can be specified in a call to "
+":func:`update_status` to appear as the name of the location. This call "
+"provides a detailed response about the location in question; the "
+":func:`nearby_places` function should be preferred for getting a list of "
+"places nearby without great detail."
+msgstr ""
+
+#: ../../api.rst:783
+msgid ""
+"The location's IP address. Twitter will attempt to geolocate using the IP"
+" address."
+msgstr ""
+
+#: ../../api.rst:790
+msgid "Given *id* of a place, provide more details about that place."
+msgstr ""
+
+#: ../../api.rst:792
+msgid "Valid Twitter ID of a location."
+msgstr ""
+
+#: ../../api.rst:795
+msgid ":mod:`tweepy.error` --- Exceptions"
+msgstr ""
+
+#: ../../api.rst:797
+msgid ""
+"The exceptions are available in the ``tweepy`` module directly, which "
+"means ``tweepy.error`` itself does not need to be imported. For example, "
+"``tweepy.error.TweepError`` is available as ``tweepy.TweepError``."
+msgstr ""
+
+#: ../../api.rst:803
+msgid "The main exception Tweepy uses. Is raised for a number of things."
+msgstr ""
+
+#: ../../api.rst:805
+msgid ""
+"When a ``TweepError`` is raised due to an error Twitter responded with, "
+"the error code (`as described in the API documentation "
+"<https://dev.twitter.com/overview/api/response-codes>`_) can be accessed "
+"at ``TweepError.message[0]['code']``. Note, however, that "
+"``TweepError``\\ s also may be raised with other things as message (for "
+"example plain error reason strings)."
+msgstr ""
+
+#: ../../api.rst:814
+msgid ""
+"Is raised when an API method fails due to hitting Twitter's rate limit. "
+"Makes for easy handling of the rate limit specifically."
+msgstr ""
+
+#: ../../api.rst:817
+msgid ""
+"Inherits from :exc:`TweepError`, so ``except TweepError`` will catch a "
+"``RateLimitError`` too."
+msgstr ""
+
