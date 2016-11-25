@@ -19,21 +19,23 @@ msgstr ""
 
 #: ../../auth_tutorial.rst:6
 msgid "Authentication Tutorial"
-msgstr ""
+msgstr "認証に関するチュートリアル"
 
 #: ../../auth_tutorial.rst:9
 msgid "Introduction"
-msgstr ""
+msgstr "イントロダクション"
 
 #: ../../auth_tutorial.rst:11
 msgid ""
 "Tweepy supports oauth authentication. Authentication is handled by the "
 "tweepy.AuthHandler class."
 msgstr ""
+"Tweepyはoauth認証をサポートしています。"
+"認証はtweepy.AuthHandlerクラスによって処理されます。"
 
 #: ../../auth_tutorial.rst:15
 msgid "OAuth Authentication"
-msgstr ""
+msgstr "OAuth認証"
 
 #: ../../auth_tutorial.rst:17
 msgid ""
@@ -42,6 +44,9 @@ msgid ""
 " new application and once you are done you should have your consumer "
 "token and secret. Keep these two handy, you'll need them."
 msgstr ""
+"TweepyはOAuthを可能な限り簡単にしようとします。"
+"またプロセスを開始するにはアプリケーションをTwitterに登録する必要です。"
+"そして新しいアプリケーションを作成してconsumer tokenとsecret keyを取得して下さい。"
 
 #: ../../auth_tutorial.rst:23
 msgid ""
@@ -49,46 +54,56 @@ msgid ""
 " consumer token and secret which was given to us in the previous "
 "paragraph::"
 msgstr ""
+"次のステップでは、OAuthHandlerインスタンスを作成します。"
+"先程取得したconsumer tokenとsecret keyを渡して下さい。"
 
 #: ../../auth_tutorial.rst:29
 msgid ""
 "If you have a web application and are using a callback URL that needs to "
 "be supplied dynamically you would pass it in like so::"
 msgstr ""
+"もしWebアプリケーションでコールバックURLを使用している場合は、次のように渡します。"
 
 #: ../../auth_tutorial.rst:35
 msgid ""
 "If the callback URL will not be changing, it is best to just configure it"
 " statically on twitter.com when setting up your application's profile."
 msgstr ""
+"コールバックURLが変更されない場合は、twitter.comでアプリケーションのプロファイルを設定するのが最善です。"
 
 #: ../../auth_tutorial.rst:39
 msgid ""
 "Unlike basic auth, we must do the OAuth \"dance\" before we can start "
 "using the API. We must complete the following steps:"
 msgstr ""
+"基本認証とは異なり、APIを使用する前にOAuthの「ダンス」を行わなければなりません。"
+"以下の手順を完了する必要があります"
 
 #: ../../auth_tutorial.rst:42
 msgid "Get a request token from twitter"
-msgstr ""
+msgstr "twitterからリクエストトークンを取得する"
 
 #: ../../auth_tutorial.rst:44
 msgid "Redirect user to twitter.com to authorize our application"
-msgstr ""
+msgstr "twitter.comにリダイレクトしてユーザーにアプリケーションを承認してもらう"
 
 #: ../../auth_tutorial.rst:46
 msgid ""
 "If using a callback, twitter will redirect the user to us. Otherwise the "
 "user must manually supply us with the verifier code."
 msgstr ""
+"コールバックを使用している場合、twitterはユーザーをアプリケーションにリダイレクトします。"
+"それ以外の場合、ユーザーは手動で検証コードを入力する必要があります。"
 
 #: ../../auth_tutorial.rst:50
 msgid "Exchange the authorized request token for an access token."
 msgstr ""
+"承認されたリクエストトークンとアクセストークンを交換します。"
 
 #: ../../auth_tutorial.rst:52
 msgid "So let's fetch our request token to begin the dance::"
 msgstr ""
+"ダンスを開始するためにリクエストトークンを取得しましょう"
 
 #: ../../auth_tutorial.rst:59
 msgid ""
@@ -100,12 +115,18 @@ msgid ""
 "session since we will need it inside the callback URL request. Here is a "
 "pseudo example of storing the request token in a session::"
 msgstr ""
+"この呼び出しはtwitterからのトークンを要求し、認証URLを返します。"
+"デスクトップアプリケーションの場合、ユーザーが戻ってくるまでOAuthHandlerインスタンスにすがることができます。"
+"Webアプリケーションでは、コールバックを利用します。"
+"リクエストトークンはコールバックURLリクエストで必要となるため、セッションに格納する必要があります。"
+"リクエストトークンをセッションに格納する擬似的な例を次に示します。::"
 
 #: ../../auth_tutorial.rst:70
 msgid ""
 "So now we can redirect the user to the URL returned to us earlier from "
 "the get_authorization_url() method."
 msgstr ""
+"これで、get_authorization_url（）メソッドから先に返されたURLにユーザーをリダイレクトできます。"
 
 #: ../../auth_tutorial.rst:73
 msgid ""
@@ -115,6 +136,8 @@ msgid ""
 "verifier value will be supplied in the callback request from twitter as a"
 " GET query parameter in the URL."
 msgstr ""
+"これがデスクトップアプリケーション（またはコールバックを使用していないアプリケーション）の場合は、twitterが権限を与えた後に提供する「ベリファイアコード」をユーザに問い合わせる必要があります。"
+"Webアプリケーションの内部では、この検証者の値は、URLのGETクエリパラメータとして、Twitterからのコールバック要求で提供されます。"
 
 #: ../../auth_tutorial.rst:87
 msgid ""
@@ -122,6 +145,9 @@ msgid ""
 "access token is the \"key\" for opening the Twitter API treasure box. To "
 "fetch this token we do the following::"
 msgstr ""
+"最後のステップは、アクセストークンとリクエストトークンを交換します。"
+"アクセストークンは、Twitter APIトレジャーボックスを開くための「キー」です。"
+"このトークンを取得するには、次の操作を行います。"
 
 #: ../../auth_tutorial.rst:104
 msgid ""
