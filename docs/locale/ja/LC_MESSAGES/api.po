@@ -137,17 +137,18 @@ msgstr ""
 #: ../../api.rst:48 ../../api.rst:59 ../../api.rst:75 ../../api.rst:87
 #: ../../api.rst:156 ../../api.rst:427 ../../api.rst:628
 msgid "list of :class:`Status` objects"
-msgstr ""
+msgstr ":class:`Status` オブジェクトのリスト"
 
 #: ../../api.rst:52
 msgid ""
 "Returns full Tweet objects for up to 100 tweets per request, specified by"
 " the `id` parameter."
 msgstr ""
+"`id` パラメータで指定された、リクエスト毎に最大100個のTweetオブジェクトを返します。"
 
 #: ../../api.rst:55
 msgid "A list of Tweet IDs to lookup, up to 100"
-msgstr ""
+msgstr "検索するツイートIDのリスト。最大100"
 
 #: ../../api.rst:56
 msgid ""
@@ -155,6 +156,7 @@ msgid ""
 "[entities](https://dev.twitter.com/docs/entities) in the returned tweets."
 " Defaults to False."
 msgstr ""
+"返却されたツイートにエンティティ(https://dev.twitter.com/docs/entities)を含めるかどうか"
 
 #: ../../api.rst:57
 msgid ""
@@ -167,6 +169,8 @@ msgid ""
 "A boolean indicating whether or not to include tweets that cannot be "
 "shown, but with a value of None. Defaults to False."
 msgstr ""
+"完全なユーザー情報ではなく、ユーザーIDを提供するかどうか"
+"デフォルトはFalseです。"
 
 #: ../../api.rst:64
 msgid ""
@@ -174,6 +178,8 @@ msgid ""
 "or the user specified. It's also possible to request another user's "
 "timeline via the id parameter."
 msgstr ""
+"フォロワーや指定されたユーザーから最新の20個のツイートを返します。"
+"idパラメータを使用して別のユーザーのタイムラインを取得することもできます。"
 
 #: ../../api.rst:68 ../../api.rst:166 ../../api.rst:198 ../../api.rst:281
 #: ../../api.rst:292 ../../api.rst:324 ../../api.rst:336 ../../api.rst:456
