@@ -19,87 +19,90 @@ msgstr ""
 
 #: ../../api.rst:6
 msgid "API Reference"
-msgstr ""
+msgstr "APIリファレンス"
 
 #: ../../api.rst:8
 msgid "This page contains some basic documentation for the Tweepy module."
 msgstr ""
+"このページにはTweepyモジュールの基本的なドキュメントが含まれています。"
 
 #: ../../api.rst:12
 msgid ":mod:`tweepy.api` --- Twitter API wrapper"
-msgstr ""
+msgstr ":mod:`tweepy.api` --- Twitter APIラッパー"
 
 #: ../../api.rst:16
 msgid ""
 "This class provides a wrapper for the API as provided by Twitter. The "
 "functions provided in this class are listed below."
 msgstr ""
+"このクラスは、Twitterが提供するAPIのラッパーを提供します。"
+"このクラスで提供される関数を以下に示します。"
 
 #: ../../api.rst:19
 msgid "authentication handler to be used"
-msgstr ""
+msgstr "認証ハンドラ"
 
 #: ../../api.rst:20
 msgid "general API host"
-msgstr ""
+msgstr "一般的なAPIホスト"
 
 #: ../../api.rst:21
 msgid "search API host"
-msgstr ""
+msgstr "検索APIホスト"
 
 #: ../../api.rst:22
 msgid "cache backend to use"
-msgstr ""
+msgstr "キャッシュバックエンド"
 
 #: ../../api.rst:23
 msgid "general API path root"
-msgstr ""
+msgstr "一般的なAPIパスのルート"
 
 #: ../../api.rst:24
 msgid "search API path root"
-msgstr ""
+msgstr "検索APIパスのルート"
 
 #: ../../api.rst:25
 msgid "default number of retries to attempt when error occurs"
-msgstr ""
+msgstr "エラーが発生したときに再試行するデフォルトの回数"
 
 #: ../../api.rst:26
 msgid "number of seconds to wait between retries"
-msgstr ""
+msgstr "再試行の間に待機する秒数"
 
 #: ../../api.rst:27
 msgid "which HTTP status codes to retry"
-msgstr ""
+msgstr "再試行するHTTPステータスコード"
 
 #: ../../api.rst:28
 msgid "The maximum amount of time to wait for a response from Twitter"
-msgstr ""
+msgstr "Twitterからの応答を待つ最大時間"
 
 #: ../../api.rst:29
 msgid "The object to use for parsing the response from Twitter"
-msgstr ""
+msgstr "Twitterからの応答を解析するために使用するオブジェクト"
 
 #: ../../api.rst:30
 msgid "Whether or not to use GZIP compression for requests"
-msgstr ""
+msgstr "要求にGZIP圧縮を使用するかどうか"
 
 #: ../../api.rst:31
 msgid "Whether or not to automatically wait for rate limits to replenish"
-msgstr ""
+msgstr "利用制限が解除されるのを自動的に待つかどうか"
 
 #: ../../api.rst:32
 msgid ""
 "Whether or not to print a notification when Tweepy is waiting for rate "
 "limits to replenish"
-msgstr ""
+msgstr "Tweepyが利用制限が解除されるのを待っているときに通知を表示するかどうか"
 
 #: ../../api.rst:33
 msgid "The full url to an HTTPS proxy to use for connecting to Twitter."
-msgstr ""
+msgstr "Twitterに接続するためのHTTPSプロキシのURL"
 
 #: ../../api.rst:36
 msgid "Timeline methods"
-msgstr ""
+msgstr "Timelineメソッド"
 
 #: ../../api.rst:40
 msgid ""
@@ -107,6 +110,8 @@ msgid ""
 "authenticating user and that user's friends. This is the equivalent of "
 "/timeline/home on the Web."
 msgstr ""
+"フォロワーとそのフォロワーの友人が投稿したretweetsを含む最新の20個のツイートを返します。"
+"これはWeb上の/timeline/homeに相当します。"
 
 #: ../../api.rst:44 ../../api.rst:71 ../../api.rst:83 ../../api.rst:225
 #: ../../api.rst:246 ../../api.rst:552 ../../api.rst:624

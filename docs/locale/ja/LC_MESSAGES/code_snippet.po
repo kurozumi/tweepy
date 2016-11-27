@@ -19,43 +19,46 @@ msgstr ""
 
 #: ../../code_snippet.rst:6
 msgid "Code Snippets"
-msgstr ""
+msgstr "コードスニペット"
 
 #: ../../code_snippet.rst:9
 msgid "Introduction"
-msgstr ""
+msgstr "イントロダクション"
 
 #: ../../code_snippet.rst:11
 msgid ""
 "Here are some code snippets to help you out with using Tweepy. Feel free "
 "to contribute your own snippets or improve the ones here!"
 msgstr ""
+"Tweepyのコードスニペットをいくつか紹介します。"
 
 #: ../../code_snippet.rst:15
 msgid "OAuth"
-msgstr ""
+msgstr "OAuth認証"
 
 #: ../../code_snippet.rst:31
 msgid "Pagination"
-msgstr ""
+msgstr "ページネーション"
 
 #: ../../code_snippet.rst:46
 msgid "FollowAll"
-msgstr ""
+msgstr "すべてのフォロワーをフォロー"
 
 #: ../../code_snippet.rst:48
 msgid "This snippet will follow every follower of the authenticated user."
-msgstr ""
+msgstr "このスニペットは、認証されたユーザーのすべてのフォロワーをフォローします。"
 
 #: ../../code_snippet.rst:56
 msgid "Handling the rate limit using cursors"
-msgstr ""
+msgstr "利用制限の処理"
 
 #: ../../code_snippet.rst:58
 msgid ""
 "Since cursors raise ``RateLimitError``\\ s in their ``next()`` method, "
 "handling them can be done by wrapping the cursor in an iterator."
 msgstr ""
+"カーソルは ``next()`` メソッドで ``RateLimitErrors`` が発生します。"
+"イテレータでカーソルをラップして終了処理を実装できます。"
 
 #: ../../code_snippet.rst:61
 msgid ""
@@ -63,4 +66,6 @@ msgid ""
 "follow less than 300 people total - to exclude obvious spambots, for "
 "example - and will wait for 15 minutes each time it hits the rate limit."
 msgstr ""
+"このスニペットを実行すると、300人以下のフォロワーを表示します。"
+"利用制限に達するたびに15分間待機します。"
 

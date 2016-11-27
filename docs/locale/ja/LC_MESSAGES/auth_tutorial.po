@@ -45,7 +45,7 @@ msgid ""
 "token and secret. Keep these two handy, you'll need them."
 msgstr ""
 "TweepyはOAuthを可能な限り簡単にしようとします。"
-"またプロセスを開始するにはアプリケーションをTwitterに登録する必要です。"
+"またプロセスを開始するにはアプリケーションをTwitterに登録する必要があります。"
 "そして新しいアプリケーションを作成してconsumer tokenとsecret keyを取得して下さい。"
 
 #: ../../auth_tutorial.rst:23
@@ -146,7 +146,7 @@ msgid ""
 "fetch this token we do the following::"
 msgstr ""
 "最後のステップは、アクセストークンとリクエストトークンを交換します。"
-"アクセストークンは、Twitter APIトレジャーボックスを開くための「キー」です。"
+"アクセストークンは、Twitter APIを使うための「キー」です。"
 "このトークンを取得するには、次の操作を行います。"
 
 #: ../../auth_tutorial.rst:104
@@ -158,6 +158,12 @@ msgid ""
 "application. Basically you need to store 2 string values: key and "
 "secret::"
 msgstr ""
+"あとで使うため、アクセストークンは保存することをお勧めします。"
+"そうすれば再度取得する必要はありません。"
+"Twitterは現在トークンに有効期限を設定していません。"
+"なのでトークンが向こうになるのはユーザーがアプリケーションアクセスを取り消した場合のみです。"
+"アクセストークンを保存するかどうかは、アプリケーションによって異なります。"
+"基本的にkeyとsecretを保存する必要があります::"
 
 #: ../../auth_tutorial.rst:114
 msgid ""
@@ -165,10 +171,13 @@ msgid ""
 "data. To re-build an OAuthHandler from this stored access token you would"
 " do this::"
 msgstr ""
+"これらはデータベース、ファイル、またはこれまでに保存していた場所に投げ込むことができます。"
+"この保存したアクセストークンからOAuthHandlerを再構築します。::"
 
 #: ../../auth_tutorial.rst:121
 msgid ""
 "So now that we have our OAuthHandler equipped with an access token, we "
 "are ready for business::"
 msgstr ""
+"OAuthHandlerにアクセストークンを設定したので準備が整いました。"
 
