@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../streaming_how_to.rst:8
 msgid "Streaming With Tweepy"
-msgstr ""
+msgstr "Tweepyでストリーミング"
 
 #: ../../streaming_how_to.rst:9
 msgid ""
@@ -27,6 +27,9 @@ msgid ""
 "authentication, connection, creating and destroying the session, reading "
 "incoming messages, and partially routing messages."
 msgstr ""
+"Tweepyは、認証、コネクション、セッションの作成と破棄、メッセージの読み取り、"
+"およびフィルタリングしたメッセージを処理することで、"
+"TwitterのストリーミングAPIを使用しやすくします。"
 
 #: ../../streaming_how_to.rst:13
 msgid ""
