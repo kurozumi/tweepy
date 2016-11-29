@@ -12,3 +12,6 @@ _templates
 dist
 htmlcov
 tweepy.egg-info
+_build
+*.mo
+_templates
