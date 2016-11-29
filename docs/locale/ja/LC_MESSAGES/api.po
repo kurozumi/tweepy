@@ -204,6 +204,7 @@ msgid ""
 "Returns the 20 most recent tweets of the authenticated user that have "
 "been retweeted by others."
 msgstr ""
+"他の人がリツイートしたフォロワーの最新の20のつぶやきを返します。"
 
 #: ../../api.rst:91
 msgid "Status methods"
@@ -212,6 +213,7 @@ msgstr ""
 #: ../../api.rst:95
 msgid "Returns a single status specified by the ID parameter."
 msgstr ""
+"IDパラメータで指定された単一のステータスを返します。"
 
 #: ../../api.rst:97 ../../api.rst:138 ../../api.rst:146 ../../api.rst:154
 #: ../../api.rst:435 ../../api.rst:444
@@ -228,6 +230,8 @@ msgid ""
 "Update the authenticated user's status. Statuses that are duplicates or "
 "too long will be silently ignored."
 msgstr ""
+"認証されたユーザーのステータスを更新します。"
+"重複しているか長すぎるステータスは暗黙のうちに無視されます。"
 
 #: ../../api.rst:106 ../../api.rst:122
 msgid "The text of your status update."
