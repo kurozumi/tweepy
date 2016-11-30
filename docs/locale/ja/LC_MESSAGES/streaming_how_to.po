@@ -132,6 +132,7 @@ msgstr ""
 #: ../../streaming_how_to.rst:65
 msgid "Step 2: Creating a **Stream**"
 msgstr ""
+"ステップ2：ストリームを作成する"
 
 #: ../../streaming_how_to.rst:66
 msgid ""
@@ -139,10 +140,14 @@ msgid ""
 " api object. Once we have an api and a status listener we can create our "
 "stream object.::"
 msgstr ""
+"ストリーミングするにはapiが必要です。"
+"apiオブジェクトを取得する方法については、 :ref:`auth_tutorial` を参照してください。"
+"APIとstatus listenerを取得すると、ストリームオブジェクトを作成できます。"
 
 #: ../../streaming_how_to.rst:73
 msgid "Step 3: Starting a Stream"
 msgstr ""
+"ステップ3：ストリームを開始する"
 
 #: ../../streaming_how_to.rst:74
 msgid ""
@@ -151,6 +156,9 @@ msgid ""
 "the capabilities and limitations of the different streams see `Twitter "
 "Streaming API Documentation`_."
 msgstr ""
+"Tweepyからいくつかのtwitterストリームが利用可能です。"
+"ほとんどの場合、filter、user_stream、またはsitestreamが使用されます。"
+"さまざまなストリームの機能と制限の詳細については、 `Twitter Streaming API Documentation`_ を参照してください。"
 
 #: ../../streaming_how_to.rst:79
 msgid ""
@@ -158,14 +166,18 @@ msgid ""
 "the word *python*. The **track** parameter is an array of search terms to"
 " stream. ::"
 msgstr ""
+"この例では、**filter** を使用して、 *python* という単語を含むすべてのツイートをストリーミングします。"
+"**track** パラメータは、ストリームする検索語の配列です。"
 
 #: ../../streaming_how_to.rst:86
 msgid "A Few More Pointers"
 msgstr ""
+"ポインタ"
 
 #: ../../streaming_how_to.rst:89
 msgid "Async Streaming"
 msgstr ""
+"非同期ストリーミング"
 
 #: ../../streaming_how_to.rst:90
 msgid ""
@@ -173,10 +185,14 @@ msgid ""
 "thread. Tweepy offers a convenient **async** parameter on **filter** so "
 "the stream will run on a new thread. For example ::"
 msgstr ""
+"ストリームは、接続が閉じられていなければ終了せず、スレッドをブロックします。"
+"Tweepyは、 **filter** で便利な **async** パラメータを提供しているので、"
+"ストリームは新しいスレッド上で実行されます。例えば以下のように::"
 
 #: ../../streaming_how_to.rst:97
 msgid "Handling Errors"
 msgstr ""
+"エラーの処理"
 
 #: ../../streaming_how_to.rst:98
 msgid ""
@@ -186,6 +202,9 @@ msgid ""
 "The amount of time a client has to wait after receiving error 420 will "
 "increase exponentially each time they make a failed attempt."
 msgstr ""
+"TwitterのストリーミングAPIを使用する場合、利用制限に注意する必要があります。"
+"クライアントが時間枠内でストリーミングAPIの接続回数を上回った場合、420エラーが発生します。"
+"クライアントが420エラーを受け入れた後に待機する時間は、試行が失敗するたびに指数関数的に増加します。"
 
 #: ../../streaming_how_to.rst:103
 msgid ""
@@ -195,10 +214,15 @@ msgid ""
 " backoff strategies recommended in the `Twitter Streaming API Connecting "
 "Documentation`_. ::"
 msgstr ""
+"Tweepyの　**Stream Listener**　は **on_error** stubにエラーコードを渡します。"
+"デフォルトの実装はすべてのコードで **False** を返しますが、"
+"`Twitter Streaming API Connecting　Documentation`_　で推奨されているバックオフストラテジーを使用して、"
+"一部またはすべてのコードに対してTweepyが再接続できるようにオーバーライドできます。"
 
 #: ../../streaming_how_to.rst:118
 msgid ""
 "For more information on error codes from the Twitter API see `Twitter "
 "Response Codes Documentation`_."
 msgstr ""
+"Twitter APIのエラーコードの詳細については、 `Twitter Response Codes Documentation`_ を参照してください。"
 
