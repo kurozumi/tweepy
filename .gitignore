@@ -7,8 +7,6 @@ env.sh
 .pdbrc
 .tox
 _build
-build
-_templates
 dist
 htmlcov
 tweepy.egg-info
