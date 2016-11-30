@@ -37,16 +37,21 @@ msgid ""
 "by offering a first walk through.  Some features of Tweepy streaming are "
 "not covered here. See streaming.py in the Tweepy source code."
 msgstr ""
+"このページは、初歩的な内容を提供することでTweepyでTwitterストリームを使い始めるのを助けることを目的としています。"
+"Tweepyストリーミングのいくつかの機能についてはここでは説明しません。"
+"Tweepyソースコードのstreaming.pyを参照してください。"
 
 #: ../../streaming_how_to.rst:17
 msgid ""
 "API authorization is required to access Twitter streams. Follow the "
 ":ref:`auth_tutorial` if you need help with authentication."
 msgstr ""
+"Twitterのストリームにアクセスするには、APIの承認が必要です。"
+"認証に関するヘルプが必要な場合は、 :ref:`auth_tutorial` をご確認下さい。"
 
 #: ../../streaming_how_to.rst:21
 msgid "Summary"
-msgstr ""
+msgstr "サマリー"
 
 #: ../../streaming_how_to.rst:22
 msgid ""
@@ -55,6 +60,9 @@ msgid ""
 "creating a live feed using a site stream or user stream. See the `Twitter"
 " Streaming API Documentation`_."
 msgstr ""
+"TwitterのストリーミングAPIは、Twitterメッセージをリアルタイムでダウンロードするために使用されます。"
+"大量のつぶやきを取得する場合や、サイトストリームやユーザーストリームを使用してライブフィードを作成する場合に便利です。"
+"詳しくは `Twitter Streaming APIのドキュメント`_ を参照してください。"
 
 #: ../../streaming_how_to.rst:27
 msgid ""
