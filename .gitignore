@@ -6,7 +6,7 @@ env.sh
 .idea
 .pdbrc
 .tox
-build
+_build
 dist
 htmlcov
 tweepy.egg-info
