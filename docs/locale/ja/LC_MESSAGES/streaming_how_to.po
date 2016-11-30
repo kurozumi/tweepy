@@ -71,6 +71,10 @@ msgid ""
 "messages to a persistent session. This allows the streaming api to "
 "download more data in real time than could be done using the REST API."
 msgstr ""
+"ストリーミングAPIはREST APIとはかなり異なります。"
+"REST APIはTwitterからデータを *pull* するために使われますが、"
+"ストリーミングAPIは永続セッションにメッセージを *pushes* します。"
+"これによりストリーミングAPIは、REST APIを使用して実行できるよりも多くのデータをリアルタイムでダウンロードできます。"
 
 #: ../../streaming_how_to.rst:33
 msgid ""
@@ -81,26 +85,37 @@ msgid ""
 "can classify most common twitter messages and routes them to "
 "appropriately named methods, but these methods are only stubs."
 msgstr ""
+"Tweepyでは、 **tweepy.Stream** のインスタンスがストリーミングセッションを確立し、"
+"**StreamListener** インスタンスにメッセージをルーティングします。"
+"stream listenerの **on_data** メソッドはすべてのメッセージを受信し、"
+"メッセージタイプに従って関数を呼び出します。"
+"デフォルトのStreamListenerは、最も一般的なtwitterメッセージを分類し、"
+"それらを適切に名前付きのメソッドにルーティングできますが、これらのメソッドはstubsだけです。"
 
 #: ../../streaming_how_to.rst:41
 msgid "Therefore using the streaming api has three steps."
 msgstr ""
+"ストリーミングAPIの使用には3つのステップがあります。"
 
 #: ../../streaming_how_to.rst:43
 msgid "Create a class inheriting from **StreamListener**"
 msgstr ""
+"**StreamListener** を継承するクラスを作成する"
 
 #: ../../streaming_how_to.rst:45
 msgid "Using that class create a **Stream** object"
 msgstr ""
+"そのクラスを使用して、 **Stream** オブジェクトを作成する"
 
 #: ../../streaming_how_to.rst:47
 msgid "Connect to the Twitter API using the **Stream**."
 msgstr ""
+"**Stream** を使用してTwitter APIに接続します"
 
 #: ../../streaming_how_to.rst:51
 msgid "Step 1: Creating a **StreamListener**"
 msgstr ""
+"ステップ1：StreamListenerの作成"
 
 #: ../../streaming_how_to.rst:52
 msgid ""
@@ -109,6 +124,10 @@ msgid ""
 "the **on_status** method. Create class **MyStreamListener** inheriting "
 "from  **StreamListener** and overriding **on_status**.::"
 msgstr ""
+"この単純なstream listenerはstatus textを出力します。"
+"Tweepyの **StreamListener** の **on_data** メソッドは、statusesから **on_status** メソッドへデータを便利に渡します。"
+"**StreamListener** を継承し、 **on_status** をオーバーライドするクラス **MyStreamListener** を作成します。::"
+
 
 #: ../../streaming_how_to.rst:65
 msgid "Step 2: Creating a **Stream**"
