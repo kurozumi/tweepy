@@ -296,7 +296,7 @@ msgstr ""
 #: ../../api.rst:152
 msgid "Returns up to 100 of the first retweets of the given tweet."
 msgstr ""
-"指定したツイートの最初から１００までのリツイート数を返します。"
+"指定したツイートの最初から100までのリツイート数を返します。"
 
 #: ../../api.rst:155
 msgid "Specifies the number of retweets to retrieve."
