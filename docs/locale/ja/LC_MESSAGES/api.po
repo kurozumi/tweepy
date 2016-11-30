@@ -209,6 +209,7 @@ msgstr ""
 #: ../../api.rst:91
 msgid "Status methods"
 msgstr ""
+"Status メソッド"
 
 #: ../../api.rst:95
 msgid "Returns a single status specified by the ID parameter."
@@ -236,6 +237,7 @@ msgstr ""
 #: ../../api.rst:106 ../../api.rst:122
 msgid "The text of your status update."
 msgstr ""
+"statusテキストを更新します。"
 
 #: ../../api.rst:107 ../../api.rst:123
 msgid "The ID of an existing status that the update is in reply to."
@@ -283,14 +285,18 @@ msgid ""
 "Destroy the status specified by the id parameter. The authenticated user "
 "must be the author of the status to destroy."
 msgstr ""
+"idパラメータで指定されたstatusを削除します。"
+"削除するには作成者でなければなりません。"
 
 #: ../../api.rst:144
 msgid "Retweets a tweet. Requires the id of the tweet you are retweeting."
 msgstr ""
+"リツイートします。リツイートするツイートのIDが必要です。"
 
 #: ../../api.rst:152
 msgid "Returns up to 100 of the first retweets of the given tweet."
 msgstr ""
+"指定したツイートの最初から１００までのリツイート数を返します。"
 
 #: ../../api.rst:155
 msgid "Specifies the number of retweets to retrieve."
@@ -313,6 +319,7 @@ msgstr ""
 #: ../../api.rst:174
 msgid "Returns the authenticated user's information."
 msgstr ""
+"認証したユーザーの情報を返します。"
 
 #: ../../api.rst:194
 msgid ""
@@ -320,6 +327,8 @@ msgid ""
 "time. If no user is specified by id/screen name, it defaults to the "
 "authenticated user."
 msgstr ""
+"一度に100のフォロワーを返します。"
+"id/screen_nameで指定されたユーザがない場合、デフォルトでは認証したユーザになります。"
 
 #: ../../api.rst:201 ../../api.rst:327 ../../api.rst:339 ../../api.rst:598
 #: ../../api.rst:606 ../../api.rst:614 ../../api.rst:667 ../../api.rst:705
@@ -338,6 +347,9 @@ msgid ""
 " using this API (about being listed in the People Search). It is only "
 "possible to retrieve the first 1000 matches from this API."
 msgstr ""
+"Twitter.comのFind Peopleボタンに似たユーザーの検索を実行します。"
+"このAPIを使用するとTwitter.comでの人物検索によって返されたのと同じ結果が返されます。"
+"このAPIから最初の1000件を検索することは可能です。"
 
 #: ../../api.rst:212
 msgid "The query to run against people search."
