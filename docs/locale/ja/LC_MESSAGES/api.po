@@ -242,18 +242,22 @@ msgstr ""
 #: ../../api.rst:107 ../../api.rst:123
 msgid "The ID of an existing status that the update is in reply to."
 msgstr ""
+"更新プログラムが応答する既存のステータスのID。"
 
 #: ../../api.rst:108 ../../api.rst:124
 msgid "Whether to automatically include the @mentions in the status metadata."
 msgstr ""
+"ステータスメタデータに@mentionsを自動的に含めるかどうか。"
 
 #: ../../api.rst:109 ../../api.rst:125
 msgid "The location's latitude that this tweet refers to."
 msgstr ""
+"ツイートした場所の緯度。"
 
 #: ../../api.rst:110 ../../api.rst:126
 msgid "The location's longitude that this tweet refers to."
 msgstr ""
+"ツイートした場所の経度。"
 
 #: ../../api.rst:111 ../../api.rst:127
 msgid ""
@@ -266,6 +270,7 @@ msgid ""
 "Twitter ID of location which is listed in the Tweet if geolocation is "
 "enabled for the user."
 msgstr ""
+"ユーザーのジオロケーションが有効になっている場合、ツイートにリストされている場所のTwitter ID。"
 
 #: ../../api.rst:121
 msgid ""
