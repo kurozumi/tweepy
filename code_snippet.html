@@ -1,0 +1,309 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>コードスニペット &mdash; tweepy 3.6.0 ドキュメント</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="索引"
+              href="genindex.html"/>
+        <link rel="search" title="検索" href="search.html"/>
+    <link rel="top" title="tweepy 3.6.0 ドキュメント" href="index.html"/>
+        <link rel="next" title="カーソルのチュートリアル" href="cursor_tutorial.html"/>
+        <link rel="prev" title="認証に関するチュートリアル" href="auth_tutorial.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> tweepy
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                3.6.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="getting_started.html">入門</a></li>
+<li class="toctree-l1"><a class="reference internal" href="auth_tutorial.html">認証に関するチュートリアル</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">コードスニペット</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#introduction">イントロダクション</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#oauth">OAuth認証</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pagination">ページネーション</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#followall">すべてのフォロワーをフォロー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#handling-the-rate-limit-using-cursors">利用制限の処理</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="cursor_tutorial.html">カーソルのチュートリアル</a></li>
+<li class="toctree-l1"><a class="reference internal" href="streaming_how_to.html">Tweepyでストリーミング</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">APIリファレンス</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html#tweepy-api-twitter-api-wrapper"><code class="docutils literal"><span class="pre">tweepy.api</span></code> — Twitter APIラッパー</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html#tweepy-error-exceptions"><code class="docutils literal"><span class="pre">tweepy.error</span></code> — Exceptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="streaming_how_to.html">Tweepyでストリーミング</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">tweepy</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>コードスニペット</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="code-snippets">
+<span id="code-snippet"></span><h1>コードスニペット<a class="headerlink" href="#code-snippets" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<div class="section" id="introduction">
+<h2>イントロダクション<a class="headerlink" href="#introduction" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Tweepyのコードスニペットをいくつか紹介します。</p>
+</div>
+<div class="section" id="oauth">
+<h2>OAuth認証<a class="headerlink" href="#oauth" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">auth</span> <span class="o">=</span> <span class="n">tweepy</span><span class="o">.</span><span class="n">OAuthHandler</span><span class="p">(</span><span class="s2">&quot;consumer_key&quot;</span><span class="p">,</span> <span class="s2">&quot;consumer_secret&quot;</span><span class="p">)</span>
+
+<span class="c1"># Redirect user to Twitter to authorize</span>
+<span class="n">redirect_user</span><span class="p">(</span><span class="n">auth</span><span class="o">.</span><span class="n">get_authorization_url</span><span class="p">())</span>
+
+<span class="c1"># Get access token</span>
+<span class="n">auth</span><span class="o">.</span><span class="n">get_access_token</span><span class="p">(</span><span class="s2">&quot;verifier_value&quot;</span><span class="p">)</span>
+
+<span class="c1"># Construct the API instance</span>
+<span class="n">api</span> <span class="o">=</span> <span class="n">tweepy</span><span class="o">.</span><span class="n">API</span><span class="p">(</span><span class="n">auth</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="pagination">
+<h2>ページネーション<a class="headerlink" href="#pagination" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># Iterate through all of the authenticated user&#39;s friends</span>
+<span class="k">for</span> <span class="n">friend</span> <span class="ow">in</span> <span class="n">tweepy</span><span class="o">.</span><span class="n">Cursor</span><span class="p">(</span><span class="n">api</span><span class="o">.</span><span class="n">friends</span><span class="p">)</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="c1"># Process the friend here</span>
+    <span class="n">process_friend</span><span class="p">(</span><span class="n">friend</span><span class="p">)</span>
+
+<span class="c1"># Iterate through the first 200 statuses in the friends timeline</span>
+<span class="k">for</span> <span class="n">status</span> <span class="ow">in</span> <span class="n">tweepy</span><span class="o">.</span><span class="n">Cursor</span><span class="p">(</span><span class="n">api</span><span class="o">.</span><span class="n">friends_timeline</span><span class="p">)</span><span class="o">.</span><span class="n">items</span><span class="p">(</span><span class="mi">200</span><span class="p">):</span>
+    <span class="c1"># Process the status here</span>
+    <span class="n">process_status</span><span class="p">(</span><span class="n">status</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="followall">
+<h2>すべてのフォロワーをフォロー<a class="headerlink" href="#followall" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>このスニペットは、認証されたユーザーのすべてのフォロワーをフォローします。</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">follower</span> <span class="ow">in</span> <span class="n">tweepy</span><span class="o">.</span><span class="n">Cursor</span><span class="p">(</span><span class="n">api</span><span class="o">.</span><span class="n">followers</span><span class="p">)</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="n">follower</span><span class="o">.</span><span class="n">follow</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="handling-the-rate-limit-using-cursors">
+<h2>利用制限の処理<a class="headerlink" href="#handling-the-rate-limit-using-cursors" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>カーソルは <code class="docutils literal"><span class="pre">next()</span></code> メソッドで <code class="docutils literal"><span class="pre">RateLimitErrors</span></code> が発生します。イテレータでカーソルをラップして終了処理を実装できます。</p>
+<p>このスニペットを実行すると、300人以下のフォロワーを表示します。利用制限に達するたびに15分間待機します。</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># In this example, the handler is time.sleep(15 * 60),</span>
+<span class="c1"># but you can of course handle it in any way you want.</span>
+
+<span class="k">def</span> <span class="nf">limit_handled</span><span class="p">(</span><span class="n">cursor</span><span class="p">):</span>
+    <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">yield</span> <span class="n">cursor</span><span class="o">.</span><span class="n">next</span><span class="p">()</span>
+        <span class="k">except</span> <span class="n">tweepy</span><span class="o">.</span><span class="n">RateLimitError</span><span class="p">:</span>
+            <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">15</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">follower</span> <span class="ow">in</span> <span class="n">limit_handled</span><span class="p">(</span><span class="n">tweepy</span><span class="o">.</span><span class="n">Cursor</span><span class="p">(</span><span class="n">api</span><span class="o">.</span><span class="n">followers</span><span class="p">)</span><span class="o">.</span><span class="n">items</span><span class="p">()):</span>
+    <span class="k">if</span> <span class="n">follower</span><span class="o">.</span><span class="n">friends_count</span> <span class="o">&lt;</span> <span class="mi">300</span><span class="p">:</span>
+        <span class="k">print</span> <span class="n">follower</span><span class="o">.</span><span class="n">screen_name</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="cursor_tutorial.html" class="btn btn-neutral float-right" title="カーソルのチュートリアル" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="auth_tutorial.html" class="btn btn-neutral" title="認証に関するチュートリアル" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2009, Joshua Roesslein.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'3.6.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/translations.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

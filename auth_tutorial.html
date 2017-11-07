@@ -1,0 +1,320 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>認証に関するチュートリアル &mdash; tweepy 3.6.0 ドキュメント</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="索引"
+              href="genindex.html"/>
+        <link rel="search" title="検索" href="search.html"/>
+    <link rel="top" title="tweepy 3.6.0 ドキュメント" href="index.html"/>
+        <link rel="next" title="コードスニペット" href="code_snippet.html"/>
+        <link rel="prev" title="入門" href="getting_started.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> tweepy
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                3.6.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="getting_started.html">入門</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">認証に関するチュートリアル</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#introduction">イントロダクション</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#oauth-authentication">OAuth認証</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="code_snippet.html">コードスニペット</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cursor_tutorial.html">カーソルのチュートリアル</a></li>
+<li class="toctree-l1"><a class="reference internal" href="streaming_how_to.html">Tweepyでストリーミング</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">APIリファレンス</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html#tweepy-api-twitter-api-wrapper"><code class="docutils literal"><span class="pre">tweepy.api</span></code> — Twitter APIラッパー</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html#tweepy-error-exceptions"><code class="docutils literal"><span class="pre">tweepy.error</span></code> — Exceptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="streaming_how_to.html">Tweepyでストリーミング</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">tweepy</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>認証に関するチュートリアル</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="authentication-tutorial">
+<span id="auth-tutorial"></span><h1>認証に関するチュートリアル<a class="headerlink" href="#authentication-tutorial" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<div class="section" id="introduction">
+<h2>イントロダクション<a class="headerlink" href="#introduction" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Tweepyはoauth認証をサポートしています。認証はtweepy.AuthHandlerクラスによって処理されます。</p>
+</div>
+<div class="section" id="oauth-authentication">
+<h2>OAuth認証<a class="headerlink" href="#oauth-authentication" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>TweepyはOAuthを可能な限り簡単にしようとします。またプロセスを開始するにはアプリケーションをTwitterに登録する必要があります。そして新しいアプリケーションを作成してconsumer tokenとsecret keyを取得して下さい。</p>
+<p>次のステップでは、OAuthHandlerインスタンスを作成します。先程取得したconsumer tokenとsecret keyを渡して下さい。</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">auth</span> <span class="o">=</span> <span class="n">tweepy</span><span class="o">.</span><span class="n">OAuthHandler</span><span class="p">(</span><span class="n">consumer_token</span><span class="p">,</span> <span class="n">consumer_secret</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>もしWebアプリケーションでコールバックURLを使用している場合は、次のように渡します。</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">auth</span> <span class="o">=</span> <span class="n">tweepy</span><span class="o">.</span><span class="n">OAuthHandler</span><span class="p">(</span><span class="n">consumer_token</span><span class="p">,</span> <span class="n">consumer_secret</span><span class="p">,</span>
+<span class="n">callback_url</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>コールバックURLが変更されない場合は、twitter.comでアプリケーションのプロファイルを設定するのが最善です。</p>
+<p>基本認証とは異なり、APIを使用する前にOAuthの「ダンス」を行わなければなりません。以下の手順を完了する必要があります</p>
+<ol class="arabic simple">
+<li>twitterからリクエストトークンを取得する</li>
+<li>twitter.comにリダイレクトしてユーザーにアプリケーションを承認してもらう</li>
+<li>コールバックを使用している場合、twitterはユーザーをアプリケーションにリダイレクトします。それ以外の場合、ユーザーは手動で検証コードを入力する必要があります。</li>
+<li>承認されたリクエストトークンとアクセストークンを交換します。</li>
+</ol>
+<p>ダンスを開始するためにリクエストトークンを取得しましょう</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
+    <span class="n">redirect_url</span> <span class="o">=</span> <span class="n">auth</span><span class="o">.</span><span class="n">get_authorization_url</span><span class="p">()</span>
+<span class="k">except</span> <span class="n">tweepy</span><span class="o">.</span><span class="n">TweepError</span><span class="p">:</span>
+    <span class="nb">print</span> <span class="s1">&#39;Error! Failed to get request token.&#39;</span>
+</pre></div>
+</div>
+<p>この呼び出しはtwitterからのトークンを要求し、認証URLを返します。デスクトップアプリケーションの場合、ユーザーが戻ってくるまでOAuthHandlerインスタンスにすがることができます。Webアプリケーションでは、コールバックを利用します。リクエストトークンはコールバックURLリクエストで必要となるため、セッションに格納する必要があります。リクエストトークンをセッションに格納する擬似的な例を次に示します。:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">session</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s1">&#39;request_token&#39;</span><span class="p">,</span> <span class="n">auth</span><span class="o">.</span><span class="n">request_token</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>これで、get_authorization_url（）メソッドから先に返されたURLにユーザーをリダイレクトできます。</p>
+<p>これがデスクトップアプリケーション（またはコールバックを使用していないアプリケーション）の場合は、twitterが権限を与えた後に提供する「ベリファイアコード」をユーザに問い合わせる必要があります。Webアプリケーションの内部では、この検証者の値は、URLのGETクエリパラメータとして、Twitterからのコールバック要求で提供されます。</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># Example using callback (web app)</span>
+<span class="n">verifier</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">GET</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;oauth_verifier&#39;</span><span class="p">)</span>
+
+<span class="c1"># Example w/o callback (desktop)</span>
+<span class="n">verifier</span> <span class="o">=</span> <span class="nb">raw_input</span><span class="p">(</span><span class="s1">&#39;Verifier:&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>最後のステップは、アクセストークンとリクエストトークンを交換します。アクセストークンは、Twitter APIを使うための「キー」です。このトークンを取得するには、次の操作を行います。</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># Let&#39;s say this is a web app, so we need to re-build the auth handler</span>
+<span class="c1"># first...</span>
+<span class="n">auth</span> <span class="o">=</span> <span class="n">tweepy</span><span class="o">.</span><span class="n">OAuthHandler</span><span class="p">(</span><span class="n">consumer_key</span><span class="p">,</span> <span class="n">consumer_secret</span><span class="p">)</span>
+<span class="n">token</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;request_token&#39;</span><span class="p">)</span>
+<span class="n">session</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="s1">&#39;request_token&#39;</span><span class="p">)</span>
+<span class="n">auth</span><span class="o">.</span><span class="n">request_token</span> <span class="o">=</span> <span class="p">{</span> <span class="s1">&#39;oauth_token&#39;</span> <span class="p">:</span> <span class="n">token</span><span class="p">,</span>
+                         <span class="s1">&#39;oauth_token_secret&#39;</span> <span class="p">:</span> <span class="n">verifier</span> <span class="p">}</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">auth</span><span class="o">.</span><span class="n">get_access_token</span><span class="p">(</span><span class="n">verifier</span><span class="p">)</span>
+<span class="k">except</span> <span class="n">tweepy</span><span class="o">.</span><span class="n">TweepError</span><span class="p">:</span>
+    <span class="nb">print</span> <span class="s1">&#39;Error! Failed to get access token.&#39;</span>
+</pre></div>
+</div>
+<p>あとで使うため、アクセストークンは保存することをお勧めします。そうすれば再度取得する必要はありません。Twitterは現在トークンに有効期限を設定していません。なのでトークンが向こうになるのはユーザーがアプリケーションアクセスを取り消した場合のみです。アクセストークンを保存するかどうかは、アプリケーションによって異なります。基本的にkeyとsecretを保存する必要があります:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">auth</span><span class="o">.</span><span class="n">access_token</span>
+<span class="n">auth</span><span class="o">.</span><span class="n">access_token_secret</span>
+</pre></div>
+</div>
+<p>これらはデータベース、ファイル、またはこれまでに保存していた場所に投げ込むことができます。この保存したアクセストークンからOAuthHandlerを再構築します。:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">auth</span> <span class="o">=</span> <span class="n">tweepy</span><span class="o">.</span><span class="n">OAuthHandler</span><span class="p">(</span><span class="n">consumer_key</span><span class="p">,</span> <span class="n">consumer_secret</span><span class="p">)</span>
+<span class="n">auth</span><span class="o">.</span><span class="n">set_access_token</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">secret</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>OAuthHandlerにアクセストークンを設定したので準備が整いました。</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">api</span> <span class="o">=</span> <span class="n">tweepy</span><span class="o">.</span><span class="n">API</span><span class="p">(</span><span class="n">auth</span><span class="p">)</span>
+<span class="n">api</span><span class="o">.</span><span class="n">update_status</span><span class="p">(</span><span class="s1">&#39;tweepy + oauth!&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="code_snippet.html" class="btn btn-neutral float-right" title="コードスニペット" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="getting_started.html" class="btn btn-neutral" title="入門" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2009, Joshua Roesslein.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'3.6.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/translations.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

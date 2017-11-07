@@ -1,0 +1,332 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Tweepyでストリーミング &mdash; tweepy 3.6.0 ドキュメント</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="索引"
+              href="genindex.html"/>
+        <link rel="search" title="検索" href="search.html"/>
+    <link rel="top" title="tweepy 3.6.0 ドキュメント" href="index.html"/>
+        <link rel="next" title="APIリファレンス" href="api.html"/>
+        <link rel="prev" title="カーソルのチュートリアル" href="cursor_tutorial.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> tweepy
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                3.6.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="getting_started.html">入門</a></li>
+<li class="toctree-l1"><a class="reference internal" href="auth_tutorial.html">認証に関するチュートリアル</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code_snippet.html">コードスニペット</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cursor_tutorial.html">カーソルのチュートリアル</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Tweepyでストリーミング</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#summary">サマリー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#step-1-creating-a-streamlistener">ステップ1：StreamListenerの作成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#step-2-creating-a-stream">ステップ2：ストリームを作成する</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#step-3-starting-a-stream">ステップ3：ストリームを開始する</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#a-few-more-pointers">ポインタ</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#async-streaming">非同期ストリーミング</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#handling-errors">エラーの処理</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">APIリファレンス</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html#tweepy-api-twitter-api-wrapper"><code class="docutils literal"><span class="pre">tweepy.api</span></code> — Twitter APIラッパー</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html#tweepy-error-exceptions"><code class="docutils literal"><span class="pre">tweepy.error</span></code> — Exceptions</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Tweepyでストリーミング</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#summary">サマリー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#step-1-creating-a-streamlistener">ステップ1：StreamListenerの作成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#step-2-creating-a-stream">ステップ2：ストリームを作成する</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#step-3-starting-a-stream">ステップ3：ストリームを開始する</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#a-few-more-pointers">ポインタ</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#async-streaming">非同期ストリーミング</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#handling-errors">エラーの処理</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">tweepy</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Tweepyでストリーミング</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="streaming-with-tweepy">
+<h1>Tweepyでストリーミング<a class="headerlink" href="#streaming-with-tweepy" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>Tweepyは、認証、コネクション、セッションの作成と破棄、メッセージの読み取り、およびフィルタリングしたメッセージを処理することで、TwitterのストリーミングAPIを使用しやすくします。</p>
+<p>このページは、初歩的な内容を提供することでTweepyでTwitterストリームを使い始めるのを助けることを目的としています。Tweepyストリーミングのいくつかの機能についてはここでは説明しません。Tweepyソースコードのstreaming.pyを参照してください。</p>
+<p>Twitterのストリームにアクセスするには、APIの承認が必要です。認証に関するヘルプが必要な場合は、 <a class="reference internal" href="auth_tutorial.html#auth-tutorial"><span class="std std-ref">認証に関するチュートリアル</span></a> をご確認下さい。</p>
+<div class="section" id="summary">
+<h2>サマリー<a class="headerlink" href="#summary" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>TwitterのストリーミングAPIは、Twitterメッセージをリアルタイムでダウンロードするために使用されます。大量のつぶやきを取得する場合や、サイトストリームやユーザーストリームを使用してライブフィードを作成する場合に便利です。詳しくは <a class="reference external" href="https://dev.twitter.com/streaming/overview">Twitter Streaming APIのドキュメント</a> を参照してください。</p>
+<p>ストリーミングAPIはREST APIとはかなり異なります。REST APIはTwitterからデータを <em>pull</em> するために使われますが、ストリーミングAPIは永続セッションにメッセージを <em>pushes</em> します。これによりストリーミングAPIは、REST APIを使用して実行できるよりも多くのデータをリアルタイムでダウンロードできます。</p>
+<p>Tweepyでは、 <strong>tweepy.Stream</strong> のインスタンスがストリーミングセッションを確立し、<strong>StreamListener</strong> インスタンスにメッセージをルーティングします。stream listenerの <strong>on_data</strong> メソッドはすべてのメッセージを受信し、メッセージタイプに従って関数を呼び出します。デフォルトのStreamListenerは、最も一般的なtwitterメッセージを分類し、それらを適切に名前付きのメソッドにルーティングできますが、これらのメソッドはstubsだけです。</p>
+<p>ストリーミングAPIの使用には3つのステップがあります。</p>
+<ol class="arabic simple">
+<li><strong>StreamListener</strong> を継承するクラスを作成する</li>
+<li>そのクラスを使用して、 <strong>Stream</strong> オブジェクトを作成する</li>
+<li><strong>Stream</strong> を使用してTwitter APIに接続します</li>
+</ol>
+</div>
+<div class="section" id="step-1-creating-a-streamlistener">
+<h2>ステップ1：StreamListenerの作成<a class="headerlink" href="#step-1-creating-a-streamlistener" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>この単純なstream listenerはstatus textを出力します。Tweepyの <strong>StreamListener</strong> の <strong>on_data</strong> メソッドは、statusesから <strong>on_status</strong> メソッドへデータを便利に渡します。<strong>StreamListener</strong> を継承し、 <strong>on_status</strong> をオーバーライドするクラス <strong>MyStreamListener</strong> を作成します。:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">tweepy</span>
+<span class="c1">#override tweepy.StreamListener to add logic to on_status</span>
+<span class="k">class</span> <span class="nc">MyStreamListener</span><span class="p">(</span><span class="n">tweepy</span><span class="o">.</span><span class="n">StreamListener</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">on_status</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">status</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">status</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="step-2-creating-a-stream">
+<h2>ステップ2：ストリームを作成する<a class="headerlink" href="#step-2-creating-a-stream" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>ストリーミングするにはapiが必要です。apiオブジェクトを取得する方法については、 <a class="reference internal" href="auth_tutorial.html#auth-tutorial"><span class="std std-ref">認証に関するチュートリアル</span></a> を参照してください。APIとstatus listenerを取得すると、ストリームオブジェクトを作成できます。</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">myStreamListener</span> <span class="o">=</span> <span class="n">MyStreamListener</span><span class="p">()</span>
+<span class="n">myStream</span> <span class="o">=</span> <span class="n">tweepy</span><span class="o">.</span><span class="n">Stream</span><span class="p">(</span><span class="n">auth</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">auth</span><span class="p">,</span> <span class="n">listener</span><span class="o">=</span><span class="n">myStreamListener</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="step-3-starting-a-stream">
+<h2>ステップ3：ストリームを開始する<a class="headerlink" href="#step-3-starting-a-stream" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Tweepyからいくつかのtwitterストリームが利用可能です。ほとんどの場合、filter、user_stream、またはsitestreamが使用されます。さまざまなストリームの機能と制限の詳細については、 <a class="reference external" href="https://dev.twitter.com/streaming/overview">Twitter Streaming API Documentation</a> を参照してください。</p>
+<p>この例では、<strong>filter</strong> を使用して、 <em>python</em> という単語を含むすべてのツイートをストリーミングします。<strong>track</strong> パラメータは、ストリームする検索語の配列です。</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">myStream</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">track</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;python&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="a-few-more-pointers">
+<h2>ポインタ<a class="headerlink" href="#a-few-more-pointers" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="section" id="async-streaming">
+<h3>非同期ストリーミング<a class="headerlink" href="#async-streaming" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>ストリームは、接続が閉じられていなければ終了せず、スレッドをブロックします。Tweepyは、 <strong>filter</strong> で便利な <strong>async</strong> パラメータを提供しているので、ストリームは新しいスレッド上で実行されます。例えば以下のように:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">myStream</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">track</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;python&#39;</span><span class="p">],</span> <span class="k">async</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="handling-errors">
+<h3>エラーの処理<a class="headerlink" href="#handling-errors" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>TwitterのストリーミングAPIを使用する場合、利用制限に注意する必要があります。クライアントが時間枠内でストリーミングAPIの接続回数を上回った場合、420エラーが発生します。クライアントが420エラーを受け入れた後に待機する時間は、試行が失敗するたびに指数関数的に増加します。</p>
+<p>Tweepyの　<strong>Stream Listener</strong>　は <strong>on_error</strong> stubにエラーコードを渡します。デフォルトの実装はすべてのコードで <strong>False</strong> を返しますが、<a class="reference external" href="https://dev.twitter.com/streaming/overview/connecting">Twitter Streaming API Connecting　Documentation</a>　で推奨されているバックオフストラテジーを使用して、一部またはすべてのコードに対してTweepyが再接続できるようにオーバーライドできます。</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MyStreamListener</span><span class="p">(</span><span class="n">tweepy</span><span class="o">.</span><span class="n">StreamListener</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">on_error</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">status_code</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">status_code</span> <span class="o">==</span> <span class="mi">420</span><span class="p">:</span>
+            <span class="c1">#returning False in on_error disconnects the stream</span>
+            <span class="k">return</span> <span class="kc">False</span>
+
+        <span class="c1"># returning non-False reconnects the stream, with backoff.</span>
+</pre></div>
+</div>
+<p>Twitter APIのエラーコードの詳細については、 <a class="reference external" href="https://dev.twitter.com/overview/api/response-codes">Twitter Response Codes Documentation</a> を参照してください。</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="api.html" class="btn btn-neutral float-right" title="APIリファレンス" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="cursor_tutorial.html" class="btn btn-neutral" title="カーソルのチュートリアル" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2009, Joshua Roesslein.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'3.6.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/translations.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

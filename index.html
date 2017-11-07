@@ -1,0 +1,309 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Tweepyドキュメント &mdash; tweepy 3.6.0 ドキュメント</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="索引"
+              href="genindex.html"/>
+        <link rel="search" title="検索" href="search.html"/>
+    <link rel="top" title="tweepy 3.6.0 ドキュメント" href="#"/>
+        <link rel="next" title="入門" href="getting_started.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="#" class="icon icon-home"> tweepy
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                3.6.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="getting_started.html">入門</a></li>
+<li class="toctree-l1"><a class="reference internal" href="auth_tutorial.html">認証に関するチュートリアル</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code_snippet.html">コードスニペット</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cursor_tutorial.html">カーソルのチュートリアル</a></li>
+<li class="toctree-l1"><a class="reference internal" href="streaming_how_to.html">Tweepyでストリーミング</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">APIリファレンス</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html#tweepy-api-twitter-api-wrapper"><code class="docutils literal"><span class="pre">tweepy.api</span></code> — Twitter APIラッパー</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html#tweepy-error-exceptions"><code class="docutils literal"><span class="pre">tweepy.error</span></code> — Exceptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="streaming_how_to.html">Tweepyでストリーミング</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">tweepy</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="#">Docs</a> &raquo;</li>
+        
+      <li>Tweepyドキュメント</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="tweepy-documentation">
+<h1>Tweepyドキュメント<a class="headerlink" href="#tweepy-documentation" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>コンテンツ</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="getting_started.html">入門</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="getting_started.html#introduction">イントロダクション</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started.html#hello-tweepy">Hello Tweepy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started.html#api">API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started.html#models">Models</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="auth_tutorial.html">認証に関するチュートリアル</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="auth_tutorial.html#introduction">イントロダクション</a></li>
+<li class="toctree-l2"><a class="reference internal" href="auth_tutorial.html#oauth-authentication">OAuth認証</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="code_snippet.html">コードスニペット</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="code_snippet.html#introduction">イントロダクション</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code_snippet.html#oauth">OAuth認証</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code_snippet.html#pagination">ページネーション</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code_snippet.html#followall">すべてのフォロワーをフォロー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code_snippet.html#handling-the-rate-limit-using-cursors">利用制限の処理</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="cursor_tutorial.html">カーソルのチュートリアル</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="cursor_tutorial.html#introduction">イントロダクション</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="streaming_how_to.html">Tweepyでストリーミング</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="streaming_how_to.html#summary">サマリー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="streaming_how_to.html#step-1-creating-a-streamlistener">ステップ1：StreamListenerの作成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="streaming_how_to.html#step-2-creating-a-stream">ステップ2：ストリームを作成する</a></li>
+<li class="toctree-l2"><a class="reference internal" href="streaming_how_to.html#step-3-starting-a-stream">ステップ3：ストリームを開始する</a></li>
+<li class="toctree-l2"><a class="reference internal" href="streaming_how_to.html#a-few-more-pointers">ポインタ</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">APIリファレンス</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html#tweepy-api-twitter-api-wrapper"><code class="docutils literal"><span class="pre">tweepy.api</span></code> — Twitter APIラッパー</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api.html#timeline-methods">Timelineメソッド</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#status-methods">Status メソッド</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#user-methods">User methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#direct-message-methods">Direct Message Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#friendship-methods">Friendship Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#account-methods">Account Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#favorite-methods">Favorite Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#block-methods">Block Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#spam-reporting-methods">Spam Reporting Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#saved-searches-methods">Saved Searches Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#help-methods">Help Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#list-methods">List Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#trends-methods">Trends Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#geo-methods">Geo Methods</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api.html#tweepy-error-exceptions"><code class="docutils literal"><span class="pre">tweepy.error</span></code> — Exceptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="streaming_how_to.html">Tweepyでストリーミング</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="streaming_how_to.html#summary">サマリー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="streaming_how_to.html#step-1-creating-a-streamlistener">ステップ1：StreamListenerの作成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="streaming_how_to.html#step-2-creating-a-stream">ステップ2：ストリームを作成する</a></li>
+<li class="toctree-l2"><a class="reference internal" href="streaming_how_to.html#step-3-starting-a-stream">ステップ3：ストリームを開始する</a></li>
+<li class="toctree-l2"><a class="reference internal" href="streaming_how_to.html#a-few-more-pointers">ポインタ</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="indices-and-tables">
+<h1>索引と検索<a class="headerlink" href="#indices-and-tables" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<ul class="simple">
+<li><a class="reference internal" href="genindex.html"><span class="std std-ref">索引</span></a></li>
+<li><a class="reference internal" href="search.html"><span class="std std-ref">検索ページ</span></a></li>
+</ul>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="getting_started.html" class="btn btn-neutral float-right" title="入門" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2009, Joshua Roesslein.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'3.6.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/translations.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

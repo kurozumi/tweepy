@@ -1,0 +1,1745 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>APIリファレンス &mdash; tweepy 3.6.0 ドキュメント</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="索引"
+              href="genindex.html"/>
+        <link rel="search" title="検索" href="search.html"/>
+    <link rel="top" title="tweepy 3.6.0 ドキュメント" href="index.html"/>
+        <link rel="prev" title="Tweepyでストリーミング" href="streaming_how_to.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> tweepy
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                3.6.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="getting_started.html">入門</a></li>
+<li class="toctree-l1"><a class="reference internal" href="auth_tutorial.html">認証に関するチュートリアル</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code_snippet.html">コードスニペット</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cursor_tutorial.html">カーソルのチュートリアル</a></li>
+<li class="toctree-l1"><a class="reference internal" href="streaming_how_to.html">Tweepyでストリーミング</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">APIリファレンス</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#tweepy-api-twitter-api-wrapper"><code class="docutils literal"><span class="pre">tweepy.api</span></code> — Twitter APIラッパー</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#timeline-methods">Timelineメソッド</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#status-methods">Status メソッド</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#user-methods">User methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#direct-message-methods">Direct Message Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#friendship-methods">Friendship Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#account-methods">Account Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#favorite-methods">Favorite Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#block-methods">Block Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#spam-reporting-methods">Spam Reporting Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#saved-searches-methods">Saved Searches Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#help-methods">Help Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#list-methods">List Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#trends-methods">Trends Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#geo-methods">Geo Methods</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#tweepy-error-exceptions"><code class="docutils literal"><span class="pre">tweepy.error</span></code> — Exceptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="streaming_how_to.html">Tweepyでストリーミング</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">tweepy</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>APIリファレンス</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <span class="target" id="api-reference"></span><div class="section" id="id1">
+<h1>APIリファレンス<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>このページにはTweepyモジュールの基本的なドキュメントが含まれています。</p>
+</div>
+<div class="section" id="tweepy-api-twitter-api-wrapper">
+<h1><code class="xref py py-mod docutils literal"><span class="pre">tweepy.api</span></code> — Twitter APIラッパー<a class="headerlink" href="#tweepy-api-twitter-api-wrapper" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<dl class="class">
+<dt id="API">
+<em class="property">class </em><code class="descname">API</code><span class="sig-paren">(</span><span class="optional">[</span><em>auth_handler=None</em><span class="optional">]</span><span class="optional">[</span>, <em>host='api.twitter.com'</em><span class="optional">]</span><span class="optional">[</span>, <em>search_host='search.twitter.com'</em><span class="optional">]</span><span class="optional">[</span>, <em>cache=None</em><span class="optional">]</span><span class="optional">[</span>, <em>api_root='/1'</em><span class="optional">]</span><span class="optional">[</span>, <em>search_root=''</em><span class="optional">]</span><span class="optional">[</span>, <em>retry_count=0</em><span class="optional">]</span><span class="optional">[</span>, <em>retry_delay=0</em><span class="optional">]</span><span class="optional">[</span>, <em>retry_errors=None</em><span class="optional">]</span><span class="optional">[</span>, <em>timeout=60</em><span class="optional">]</span><span class="optional">[</span>, <em>parser=ModelParser</em><span class="optional">]</span><span class="optional">[</span>, <em>compression=False</em><span class="optional">]</span><span class="optional">[</span>, <em>wait_on_rate_limit=False</em><span class="optional">]</span><span class="optional">[</span>, <em>wait_on_rate_limit_notify=False</em><span class="optional">]</span><span class="optional">[</span>, <em>proxy=None</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#API" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>このクラスは、Twitterが提供するAPIのラッパーを提供します。このクラスで提供される関数を以下に示します。</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first last simple">
+<li><strong>auth_handler</strong> – 認証ハンドラ</li>
+<li><strong>host</strong> – 一般的なAPIホスト</li>
+<li><strong>search_host</strong> – 検索APIホスト</li>
+<li><strong>cache</strong> – キャッシュバックエンド</li>
+<li><strong>api_root</strong> – 一般的なAPIパスのルート</li>
+<li><strong>search_root</strong> – 検索APIパスのルート</li>
+<li><strong>retry_count</strong> – エラーが発生したときに再試行するデフォルトの回数</li>
+<li><strong>retry_delay</strong> – 再試行の間に待機する秒数</li>
+<li><strong>retry_errors</strong> – 再試行するHTTPステータスコード</li>
+<li><strong>timeout</strong> – Twitterからの応答を待つ最大時間</li>
+<li><strong>parser</strong> – Twitterからの応答を解析するために使用するオブジェクト</li>
+<li><strong>compression</strong> – 要求にGZIP圧縮を使用するかどうか</li>
+<li><strong>wait_on_rate_limit</strong> – 利用制限が解除されるのを自動的に待つかどうか</li>
+<li><strong>wait_on_rate_limit_notify</strong> – Tweepyが利用制限が解除されるのを待っているときに通知を表示するかどうか</li>
+<li><strong>proxy</strong> – Twitterに接続するためのHTTPSプロキシのURL</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<div class="section" id="timeline-methods">
+<h2>Timelineメソッド<a class="headerlink" href="#timeline-methods" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<dl class="method">
+<dt id="API.home_timeline">
+<code class="descclassname">API.</code><code class="descname">home_timeline</code><span class="sig-paren">(</span><span class="optional">[</span><em>since_id</em><span class="optional">]</span><span class="optional">[</span>, <em>max_id</em><span class="optional">]</span><span class="optional">[</span>, <em>count</em><span class="optional">]</span><span class="optional">[</span>, <em>page</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#API.home_timeline" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>フォロワーとそのフォロワーの友人が投稿したretweetsを含む最新の20個のツイートを返します。これはWeb上の/timeline/homeに相当します。</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
+<li><strong>since_id</strong> – Returns only statuses with an ID greater than (that is, more recent than) the specified ID.</li>
+<li><strong>max_id</strong> – Returns only statuses with an ID less than (that is, older than) or equal to the specified ID.</li>
+<li><strong>count</strong> – Specifies the number of statuses to retrieve.</li>
+<li><strong>page</strong> – Specifies the page of results to retrieve. Note: there are pagination limits.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last"><code class="xref py py-class docutils literal"><span class="pre">Status</span></code> オブジェクトのリスト</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="API.statuses_lookup">
+<code class="descclassname">API.</code><code class="descname">statuses_lookup</code><span class="sig-paren">(</span><em>id</em><span class="optional">[</span>, <em>include_entities</em><span class="optional">]</span><span class="optional">[</span>, <em>trim_user</em><span class="optional">]</span><span class="optional">[</span>, <em>map</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#API.statuses_lookup" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p><cite>id</cite> パラメータで指定された、リクエスト毎に最大100個のTweetオブジェクトを返します。</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
+<li><strong>id</strong> – 検索するツイートIDのリスト。最大100</li>
+<li><strong>include_entities</strong> – 返却されたツイートにエンティティ(<a class="reference external" href="https://dev.twitter.com/docs/entities">https://dev.twitter.com/docs/entities</a>)を含めるかどうか</li>
+<li><strong>trim_user</strong> – A boolean indicating if user IDs should be provided, instead of full user information. Defaults to False.</li>
+<li><strong>map</strong> – 完全なユーザー情報ではなく、ユーザーIDを提供するかどうかデフォルトはFalseです。</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last"><code class="xref py py-class docutils literal"><span class="pre">Status</span></code> オブジェクトのリスト</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="API.user_timeline">
+<code class="descclassname">API.</code><code class="descname">user_timeline</code><span class="sig-paren">(</span><span class="optional">[</span><em>id/user_id/screen_name</em><span class="optional">]</span><span class="optional">[</span>, <em>since_id</em><span class="optional">]</span><span class="optional">[</span>, <em>max_id</em><span class="optional">]</span><span class="optional">[</span>, <em>count</em><span class="optional">]</span><span class="optional">[</span>, <em>page</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#API.user_timeline" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>フォロワーや指定されたユーザーから最新の20個のツイートを返します。idパラメータを使用して別のユーザーのタイムラインを取得することもできます。</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
+<li><strong>id</strong> – Specifies the ID or screen name of the user.</li>
+<li><strong>user_id</strong> – Specifies the ID of the user. Helpful for disambiguating when a valid user ID is also a valid screen name.</li>
+<li><strong>screen_name</strong> – Specifies the screen name of the user. Helpful for disambiguating when a valid screen name is also a user ID.</li>
+<li><strong>since_id</strong> – Returns only statuses with an ID greater than (that is, more recent than) the specified ID.</li>
+<li><strong>max_id</strong> – Returns only statuses with an ID less than (that is, older than) or equal to the specified ID.</li>
+<li><strong>count</strong> – Specifies the number of statuses to retrieve.</li>
+<li><strong>page</strong> – Specifies the page of results to retrieve. Note: there are pagination limits.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last"><code class="xref py py-class docutils literal"><span class="pre">Status</span></code> オブジェクトのリスト</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="API.retweets_of_me">
+<code class="descclassname">API.</code><code class="descname">retweets_of_me</code><span class="sig-paren">(</span><span class="optional">[</span><em>since_id</em><span class="optional">]</span><span class="optional">[</span>, <em>max_id</em><span class="optional">]</span><span class="optional">[</span>, <em>count</em><span class="optional">]</span><span class="optional">[</span>, <em>page</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#API.retweets_of_me" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>他の人がリツイートしたフォロワーの最新の20のつぶやきを返します。</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
+<li><strong>since_id</strong> – Returns only statuses with an ID greater than (that is, more recent than) the specified ID.</li>
+<li><strong>max_id</strong> – Returns only statuses with an ID less than (that is, older than) or equal to the specified ID.</li>
+<li><strong>count</strong> – Specifies the number of statuses to retrieve.</li>
+<li><strong>page</strong> – Specifies the page of results to retrieve. Note: there are pagination limits.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last"><code class="xref py py-class docutils literal"><span class="pre">Status</span></code> オブジェクトのリスト</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="status-methods">
+<h2>Status メソッド<a class="headerlink" href="#status-methods" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<dl class="method">
+<dt id="API.get_status">
+<code class="descclassname">API.</code><code class="descname">get_status</code><span class="sig-paren">(</span><em>id</em><span class="sig-paren">)</span><a class="headerlink" href="#API.get_status" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>IDパラメータで指定された単一のステータスを返します。</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><strong>id</strong> – The numerical ID of the status.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">戻り値の型:</th><td class="field-body"><code class="xref py py-class docutils literal"><span class="pre">Status</span></code> object</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="API.update_status">
+<code class="descclassname">API.</code><code class="descname">update_status</code><span class="sig-paren">(</span><em>status</em><span class="optional">[</span>, <em>in_reply_to_status_id</em><span class="optional">]</span><span class="optional">[</span>, <em>auto_populate_reply_metadata</em><span class="optional">]</span><span class="optional">[</span>, <em>lat</em><span class="optional">]</span><span class="optional">[</span>, <em>long</em><span class="optional">]</span><span class="optional">[</span>, <em>source</em><span class="optional">]</span><span class="optional">[</span>, <em>place_id</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#API.update_status" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>認証されたユーザーのステータスを更新します。重複しているか長すぎるステータスは暗黙のうちに無視されます。</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
+<li><strong>status</strong> – statusテキストを更新します。</li>
+<li><strong>in_reply_to_status_id</strong> – 更新プログラムが応答する既存のステータスのID。</li>
+<li><strong>auto_populate_reply_metadata</strong> – ステータスメタデータに&#64;mentionsを自動的に含めるかどうか。</li>
+<li><strong>lat</strong> – ツイートした場所の緯度。</li>
+<li><strong>long</strong> – ツイートした場所の経度。</li>
+<li><strong>source</strong> – Source of the update. Only supported by Identi.ca. Twitter ignores this parameter.</li>
+<li><strong>place_id</strong> – ユーザーのジオロケーションが有効になっている場合、ツイートにリストされている場所のTwitter ID。</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last"><code class="xref py py-class docutils literal"><span class="pre">Status</span></code> object</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="API.update_with_media">
+<code class="descclassname">API.</code><code class="descname">update_with_media</code><span class="sig-paren">(</span><em>filename</em><span class="optional">[</span>, <em>status</em><span class="optional">]</span><span class="optional">[</span>, <em>in_reply_to_status_id</em><span class="optional">]</span><span class="optional">[</span>, <em>auto_populate_reply_metadata</em><span class="optional">]</span><span class="optional">[</span>, <em>lat</em><span class="optional">]</span><span class="optional">[</span>, <em>long</em><span class="optional">]</span><span class="optional">[</span>, <em>source</em><span class="optional">]</span><span class="optional">[</span>, <em>place_id</em><span class="optional">]</span><span class="optional">[</span>, <em>file</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#API.update_with_media" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>認証されたユーザーのステータスを更新します。重複しているか長すぎるステータスは暗黙のうちに無視されます。</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
+<li><strong>filename</strong> – The filename of the image to upload. This will automatically be opened unless <cite>file</cite> is specified</li>
+<li><strong>status</strong> – statusテキストを更新します。</li>
+<li><strong>in_reply_to_status_id</strong> – 更新プログラムが応答する既存のステータスのID。</li>
+<li><strong>auto_populate_reply_metadata</strong> – ステータスメタデータに&#64;mentionsを自動的に含めるかどうか。</li>
+<li><strong>lat</strong> – ツイートした場所の緯度。</li>
+<li><strong>long</strong> – ツイートした場所の経度。</li>
+<li><strong>source</strong> – Source of the update. Only supported by Identi.ca. Twitter ignores this parameter.</li>
+<li><strong>place_id</strong> – ユーザーのジオロケーションが有効になっている場合、ツイートにリストされている場所のTwitter ID。</li>
+<li><strong>file</strong> – A file object, which will be used instead of opening <cite>filename</cite>. <cite>filename</cite> is still required, for MIME type detection and to use as a form field in the POST data</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last"><code class="xref py py-class docutils literal"><span class="pre">Status</span></code> object</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="API.destroy_status">
+<code class="descclassname">API.</code><code class="descname">destroy_status</code><span class="sig-paren">(</span><em>id</em><span class="sig-paren">)</span><a class="headerlink" href="#API.destroy_status" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>idパラメータで指定されたstatusを削除します。削除するには作成者でなければなりません。</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><strong>id</strong> – The numerical ID of the status.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">戻り値の型:</th><td class="field-body"><code class="xref py py-class docutils literal"><span class="pre">Status</span></code> object</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="API.retweet">
+<code class="descclassname">API.</code><code class="descname">retweet</code><span class="sig-paren">(</span><em>id</em><span class="sig-paren">)</span><a class="headerlink" href="#API.retweet" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>リツイートします。リツイートするツイートのIDが必要です。</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><strong>id</strong> – The numerical ID of the status.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">戻り値の型:</th><td class="field-body"><code class="xref py py-class docutils literal"><span class="pre">Status</span></code> object</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="API.retweets">
+<code class="descclassname">API.</code><code class="descname">retweets</code><span class="sig-paren">(</span><em>id</em><span class="optional">[</span>, <em>count</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#API.retweets" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>指定したツイートの最初から100までのリツイート数を返します。</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
+<li><strong>id</strong> – The numerical ID of the status.</li>
+<li><strong>count</strong> – Specifies the number of retweets to retrieve.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last"><code class="xref py py-class docutils literal"><span class="pre">Status</span></code> オブジェクトのリスト</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="user-methods">
+<h2>User methods<a class="headerlink" href="#user-methods" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<dl class="method">
+<dt id="API.get_user">
+<code class="descclassname">API.</code><code class="descname">get_user</code><span class="sig-paren">(</span><em>id/user_id/screen_name</em><span class="sig-paren">)</span><a class="headerlink" href="#API.get_user" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Returns information about the specified user.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
+<li><strong>id</strong> – Specifies the ID or screen name of the user.</li>
+<li><strong>user_id</strong> – Specifies the ID of the user. Helpful for disambiguating when a valid user ID is also a valid screen name.</li>
+<li><strong>screen_name</strong> – Specifies the screen name of the user. Helpful for disambiguating when a valid screen name is also a user ID.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last"><code class="xref py py-class docutils literal"><span class="pre">User</span></code> object</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="API.me">
+<code class="descclassname">API.</code><code class="descname">me</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#API.me" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>認証したユーザーの情報を返します。</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">戻り値の型:</th><td class="field-body"><code class="xref py py-class docutils literal"><span class="pre">User</span></code> object</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="API.followers">
+<code class="descclassname">API.</code><code class="descname">followers</code><span class="sig-paren">(</span><span class="optional">[</span><em>id/screen_name/user_id</em><span class="optional">]</span><span class="optional">[</span>, <em>cursor</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#API.followers" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>一度に100のフォロワーを返します。id/screen_nameで指定されたユーザがない場合、デフォルトでは認証したユーザになります。</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
+<li><strong>id</strong> – Specifies the ID or screen name of the user.</li>
+<li><strong>user_id</strong> – Specifies the ID of the user. Helpful for disambiguating when a valid user ID is also a valid screen name.</li>
+<li><strong>screen_name</strong> – Specifies the screen name of the user. Helpful for disambiguating when a valid screen name is also a user ID.</li>
+<li><strong>cursor</strong> – Breaks the results into pages. Provide a value of  -1 to begin paging. Provide values as returned to in the response body’s next_cursor and previous_cursor attributes to page back and forth in the list.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last">list of <code class="xref py py-class docutils literal"><span class="pre">User</span></code> objects</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="API.search_users">
+<code class="descclassname">API.</code><code class="descname">search_users</code><span class="sig-paren">(</span><em>q</em><span class="optional">[</span>, <em>per_page</em><span class="optional">]</span><span class="optional">[</span>, <em>page</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#API.search_users" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Twitter.comのFind Peopleボタンに似たユーザーの検索を実行します。このAPIを使用するとTwitter.comでの人物検索によって返されたのと同じ結果が返されます。このAPIから最初の1000件を検索することは可能です。</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
+<li><strong>q</strong> – The query to run against people search.</li>
+<li><strong>per_page</strong> – Specifies the number of statuses to retrieve. May not be greater than 20.</li>
+<li><strong>page</strong> – Specifies the page of results to retrieve. Note: there are pagination limits.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last">list of <code class="xref py py-class docutils literal"><span class="pre">User</span></code> objects</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="direct-message-methods">
+<h2>Direct Message Methods<a class="headerlink" href="#direct-message-methods" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<dl class="method">
+<dt id="API.direct_messages">
+<code class="descclassname">API.</code><code class="descname">direct_messages</code><span class="sig-paren">(</span><span class="optional">[</span><em>since_id</em><span class="optional">]</span><span class="optional">[</span>, <em>max_id</em><span class="optional">]</span><span class="optional">[</span>, <em>count</em><span class="optional">]</span><span class="optional">[</span>, <em>page</em><span class="optional">]</span><span class="optional">[</span>, <em>full_text</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#API.direct_messages" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Returns direct messages sent to the authenticating user.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
+<li><strong>since_id</strong> – Returns only statuses with an ID greater than (that is, more recent than) the specified ID.</li>
+<li><strong>max_id</strong> – Returns only statuses with an ID less than (that is, older than) or equal to the specified ID.</li>
+<li><strong>count</strong> – Specifies the number of statuses to retrieve.</li>
+<li><strong>page</strong> – Specifies the page of results to retrieve. Note: there are pagination limits.</li>
+<li><strong>full_text</strong> – A boolean indicating whether or not the full text of a message should be returned. If False the message text returned will be truncated to 140 chars. Defaults to False.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last">list of <code class="xref py py-class docutils literal"><span class="pre">DirectMessage</span></code> objects</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="API.get_direct_message">
+<code class="descclassname">API.</code><code class="descname">get_direct_message</code><span class="sig-paren">(</span><span class="optional">[</span><em>id</em><span class="optional">]</span><span class="optional">[</span>, <em>full_text</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#API.get_direct_message" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Returns a specific direct message.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
+<li><strong>id</strong> – <a href="#id10"><span class="problematic" id="id11">|id|</span></a></li>
+<li><strong>full_text</strong> – A boolean indicating whether or not the full text of a message should be returned. If False the message text returned will be truncated to 140 chars. Defaults to False.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last"><code class="xref py py-class docutils literal"><span class="pre">DirectMessage</span></code> object</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="API.sent_direct_messages">
+<code class="descclassname">API.</code><code class="descname">sent_direct_messages</code><span class="sig-paren">(</span><span class="optional">[</span><em>since_id</em><span class="optional">]</span><span class="optional">[</span>, <em>max_id</em><span class="optional">]</span><span class="optional">[</span>, <em>count</em><span class="optional">]</span><span class="optional">[</span>, <em>page</em><span class="optional">]</span><span class="optional">[</span>, <em>full_text</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#API.sent_direct_messages" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Returns direct messages sent by the authenticating user.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
+<li><strong>since_id</strong> – Returns only statuses with an ID greater than (that is, more recent than) the specified ID.</li>
+<li><strong>max_id</strong> – Returns only statuses with an ID less than (that is, older than) or equal to the specified ID.</li>
+<li><strong>count</strong> – Specifies the number of statuses to retrieve.</li>
+<li><strong>page</strong> – Specifies the page of results to retrieve. Note: there are pagination limits.</li>
+<li><strong>full_text</strong> – A boolean indicating whether or not the full text of a message should be returned. If False the message text returned will be truncated to 140 chars. Defaults to False.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last">list of <code class="xref py py-class docutils literal"><span class="pre">DirectMessage</span></code> objects</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="API.send_direct_message">
+<code class="descclassname">API.</code><code class="descname">send_direct_message</code><span class="sig-paren">(</span><em>user/screen_name/user_id</em>, <em>text</em><span class="sig-paren">)</span><a class="headerlink" href="#API.send_direct_message" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Sends a new direct message to the specified user from the
+authenticating user.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
+<li><strong>user</strong> – The ID or screen name of the recipient user.</li>
+<li><strong>screen_name</strong> – screen name of the recipient user</li>
+<li><strong>user_id</strong> – user id of the recipient user</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last"><code class="xref py py-class docutils literal"><span class="pre">DirectMessage</span></code> object</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="API.destroy_direct_message">
+<code class="descclassname">API.</code><code class="descname">destroy_direct_message</code><span class="sig-paren">(</span><em>id</em><span class="sig-paren">)</span><a class="headerlink" href="#API.destroy_direct_message" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Destroy a direct message. Authenticating user must be the recipient of
+the direct message.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><strong>id</strong> – The ID of the direct message to destroy.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">戻り値の型:</th><td class="field-body"><code class="xref py py-class docutils literal"><span class="pre">DirectMessage</span></code> object</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="friendship-methods">
+<h2>Friendship Methods<a class="headerlink" href="#friendship-methods" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<dl class="method">
+<dt id="API.create_friendship">
+<code class="descclassname">API.</code><code class="descname">create_friendship</code><span class="sig-paren">(</span><em>id/screen_name/user_id</em><span class="optional">[</span>, <em>follow</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#API.create_friendship" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Create a new friendship with the specified user (aka follow).</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
+<li><strong>id</strong> – Specifies the ID or screen name of the user.</li>
+<li><strong>screen_name</strong> – Specifies the screen name of the user. Helpful for disambiguating when a valid screen name is also a user ID.</li>
+<li><strong>user_id</strong> – Specifies the ID of the user. Helpful for disambiguating when a valid user ID is also a valid screen name.</li>
+<li><strong>follow</strong> – Enable notifications for the target user in addition to becoming friends.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last"><code class="xref py py-class docutils literal"><span class="pre">User</span></code> object</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="API.destroy_friendship">
+<code class="descclassname">API.</code><code class="descname">destroy_friendship</code><span class="sig-paren">(</span><em>id/screen_name/user_id</em><span class="sig-paren">)</span><a class="headerlink" href="#API.destroy_friendship" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Destroy a friendship with the specified user (aka unfollow).</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
+<li><strong>id</strong> – Specifies the ID or screen name of the user.</li>
+<li><strong>screen_name</strong> – Specifies the screen name of the user. Helpful for disambiguating when a valid screen name is also a user ID.</li>
+<li><strong>user_id</strong> – Specifies the ID of the user. Helpful for disambiguating when a valid user ID is also a valid screen name.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last"><code class="xref py py-class docutils literal"><span class="pre">User</span></code> object</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="API.exists_friendship">
+<code class="descclassname">API.</code><code class="descname">exists_friendship</code><span class="sig-paren">(</span><em>user_a</em>, <em>user_b</em><span class="sig-paren">)</span><a class="headerlink" href="#API.exists_friendship" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Checks if a friendship exists between two users. Will return True if
+user_a follows user_b, otherwise False.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
+<li><strong>user_a</strong> – The ID or screen_name of the subject user.</li>
+<li><strong>user_b</strong> – The ID or screen_name of the user to test for following.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last">True/False</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="API.show_friendship">
+<code class="descclassname">API.</code><code class="descname">show_friendship</code><span class="sig-paren">(</span><em>source_id/source_screen_name</em>, <em>target_id/target_screen_name</em><span class="sig-paren">)</span><a class="headerlink" href="#API.show_friendship" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Returns detailed information about the relationship between two users.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
+<li><strong>source_id</strong> – The user_id of the subject user.</li>
+<li><strong>source_screen_name</strong> – The screen_name of the subject user.</li>
+<li><strong>target_id</strong> – The user_id of the target user.</li>
+<li><strong>target_screen_name</strong> – The screen_name of the target user.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last"><code class="xref py py-class docutils literal"><span class="pre">Friendship</span></code> object</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="API.friends_ids">
+<code class="descclassname">API.</code><code class="descname">friends_ids</code><span class="sig-paren">(</span><em>id/screen_name/user_id</em><span class="optional">[</span>, <em>cursor</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#API.friends_ids" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Returns an array containing the IDs of users being followed by the
+specified user.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
+<li><strong>id</strong> – Specifies the ID or screen name of the user.</li>
+<li><strong>screen_name</strong> – Specifies the screen name of the user. Helpful for disambiguating when a valid screen name is also a user ID.</li>
+<li><strong>user_id</strong> – Specifies the ID of the user. Helpful for disambiguating when a valid user ID is also a valid screen name.</li>
+<li><strong>cursor</strong> – Breaks the results into pages. Provide a value of  -1 to begin paging. Provide values as returned to in the response body’s next_cursor and previous_cursor attributes to page back and forth in the list.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last">list of Integers</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="API.followers_ids">
+<code class="descclassname">API.</code><code class="descname">followers_ids</code><span class="sig-paren">(</span><em>id/screen_name/user_id</em><span class="sig-paren">)</span><a class="headerlink" href="#API.followers_ids" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Returns an array containing the IDs of users following the specified
+user.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
+<li><strong>id</strong> – Specifies the ID or screen name of the user.</li>
+<li><strong>screen_name</strong> – Specifies the screen name of the user. Helpful for disambiguating when a valid screen name is also a user ID.</li>
+<li><strong>user_id</strong> – Specifies the ID of the user. Helpful for disambiguating when a valid user ID is also a valid screen name.</li>
+<li><strong>cursor</strong> – Breaks the results into pages. Provide a value of  -1 to begin paging. Provide values as returned to in the response body’s next_cursor and previous_cursor attributes to page back and forth in the list.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last">list of Integers</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="account-methods">
+<h2>Account Methods<a class="headerlink" href="#account-methods" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<dl class="method">
+<dt id="API.verify_credentials">
+<code class="descclassname">API.</code><code class="descname">verify_credentials</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#API.verify_credentials" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Verify the supplied user credentials are valid.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">戻り値の型:</th><td class="field-body"><code class="xref py py-class docutils literal"><span class="pre">User</span></code> object if credentials are valid, otherwise False</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="API.rate_limit_status">
+<code class="descclassname">API.</code><code class="descname">rate_limit_status</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#API.rate_limit_status" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Returns the remaining number of API requests available to the
+requesting user before the API limit is reached for the current
+hour. Calls to rate_limit_status do not count against the rate
+limit. If authentication credentials are provided, the rate limit
+status for the authenticating user is returned. Otherwise, the rate
+limit status for the requester’s IP address is returned.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">戻り値の型:</th><td class="field-body"><code class="xref py py-class docutils literal"><span class="pre">JSON</span></code> object</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="API.set_delivery_device">
+<code class="descclassname">API.</code><code class="descname">set_delivery_device</code><span class="sig-paren">(</span><em>device</em><span class="sig-paren">)</span><a class="headerlink" href="#API.set_delivery_device" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Sets which device Twitter delivers updates to for the authenticating
+user. Sending 「none」 as the device parameter will disable SMS updates.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><strong>device</strong> – Must be one of: sms, none</td>
+</tr>
+<tr class="field-even field"><th class="field-name">戻り値の型:</th><td class="field-body"><code class="xref py py-class docutils literal"><span class="pre">User</span></code> object</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="API.update_profile_colors">
+<code class="descclassname">API.</code><code class="descname">update_profile_colors</code><span class="sig-paren">(</span><span class="optional">[</span><em>profile_background_color</em><span class="optional">]</span><span class="optional">[</span>, <em>profile_text_color</em><span class="optional">]</span><span class="optional">[</span>, <em>profile_link_color</em><span class="optional">]</span><span class="optional">[</span>, <em>profile_sidebar_fill_color</em><span class="optional">]</span><span class="optional">[</span>, <em>profile_sidebar_border_color</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#API.update_profile_colors" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Sets one or more hex values that control the color scheme of the
+authenticating user’s profile page on twitter.com.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
+<li><strong>profile_background_color</strong> – </li>
+<li><strong>profile_text_color</strong> – </li>
+<li><strong>profile_link_color</strong> – </li>
+<li><strong>profile_sidebar_fill_color</strong> – </li>
+<li><strong>profile_sidebar_border_color</strong> – </li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last"><code class="xref py py-class docutils literal"><span class="pre">User</span></code> object</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="API.update_profile_image">
+<code class="descclassname">API.</code><code class="descname">update_profile_image</code><span class="sig-paren">(</span><em>filename</em><span class="sig-paren">)</span><a class="headerlink" href="#API.update_profile_image" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Update the authenticating user’s profile image. Valid formats: GIF,
+JPG, or PNG</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><strong>filename</strong> – local path to image file to upload. Not a remote URL!</td>
+</tr>
+<tr class="field-even field"><th class="field-name">戻り値の型:</th><td class="field-body"><code class="xref py py-class docutils literal"><span class="pre">User</span></code> object</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="API.update_profile_background_image">
+<code class="descclassname">API.</code><code class="descname">update_profile_background_image</code><span class="sig-paren">(</span><em>filename</em><span class="sig-paren">)</span><a class="headerlink" href="#API.update_profile_background_image" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Update authenticating user’s background image. Valid formats: GIF,
+JPG, or PNG</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><strong>filename</strong> – local path to image file to upload. Not a remote URL!</td>
+</tr>
+<tr class="field-even field"><th class="field-name">戻り値の型:</th><td class="field-body"><code class="xref py py-class docutils literal"><span class="pre">User</span></code> object</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="API.update_profile">
+<code class="descclassname">API.</code><code class="descname">update_profile</code><span class="sig-paren">(</span><span class="optional">[</span><em>name</em><span class="optional">]</span><span class="optional">[</span>, <em>url</em><span class="optional">]</span><span class="optional">[</span>, <em>location</em><span class="optional">]</span><span class="optional">[</span>, <em>description</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#API.update_profile" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Sets values that users are able to set under the 「Account」 tab of
+their settings page.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
+<li><strong>name</strong> – Maximum of 20 characters</li>
+<li><strong>url</strong> – Maximum of 100 characters. Will be prepended with 「<a class="reference external" href="http://">http://</a>」 if not present</li>
+<li><strong>location</strong> – Maximum of 30 characters</li>
+<li><strong>description</strong> – Maximum of 160 characters</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last"><code class="xref py py-class docutils literal"><span class="pre">User</span></code> object</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="favorite-methods">
+<h2>Favorite Methods<a class="headerlink" href="#favorite-methods" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<dl class="method">
+<dt id="API.favorites">
+<code class="descclassname">API.</code><code class="descname">favorites</code><span class="sig-paren">(</span><span class="optional">[</span><em>id</em><span class="optional">]</span><span class="optional">[</span>, <em>page</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#API.favorites" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Returns the favorite statuses for the authenticating user or user
+specified by the ID parameter.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
+<li><strong>id</strong> – The ID or screen name of the user to request favorites</li>
+<li><strong>page</strong> – Specifies the page of results to retrieve. Note: there are pagination limits.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last"><code class="xref py py-class docutils literal"><span class="pre">Status</span></code> オブジェクトのリスト</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="API.create_favorite">
+<code class="descclassname">API.</code><code class="descname">create_favorite</code><span class="sig-paren">(</span><em>id</em><span class="sig-paren">)</span><a class="headerlink" href="#API.create_favorite" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Favorites the status specified in the ID parameter as the
+authenticating user.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><strong>id</strong> – The numerical ID of the status.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">戻り値の型:</th><td class="field-body"><code class="xref py py-class docutils literal"><span class="pre">Status</span></code> object</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="API.destroy_favorite">
+<code class="descclassname">API.</code><code class="descname">destroy_favorite</code><span class="sig-paren">(</span><em>id</em><span class="sig-paren">)</span><a class="headerlink" href="#API.destroy_favorite" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Un-favorites the status specified in the ID parameter as the
+authenticating user.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><strong>id</strong> – The numerical ID of the status.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">戻り値の型:</th><td class="field-body"><code class="xref py py-class docutils literal"><span class="pre">Status</span></code> object</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="block-methods">
+<h2>Block Methods<a class="headerlink" href="#block-methods" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<dl class="method">
+<dt id="API.create_block">
+<code class="descclassname">API.</code><code class="descname">create_block</code><span class="sig-paren">(</span><em>id/screen_name/user_id</em><span class="sig-paren">)</span><a class="headerlink" href="#API.create_block" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Blocks the user specified in the ID parameter as the authenticating
+user. Destroys a friendship to the blocked user if it exists.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
+<li><strong>id</strong> – Specifies the ID or screen name of the user.</li>
+<li><strong>screen_name</strong> – Specifies the screen name of the user. Helpful for disambiguating when a valid screen name is also a user ID.</li>
+<li><strong>user_id</strong> – Specifies the ID of the user. Helpful for disambiguating when a valid user ID is also a valid screen name.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last"><code class="xref py py-class docutils literal"><span class="pre">User</span></code> object</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="API.destroy_block">
+<code class="descclassname">API.</code><code class="descname">destroy_block</code><span class="sig-paren">(</span><em>id/screen_name/user_id</em><span class="sig-paren">)</span><a class="headerlink" href="#API.destroy_block" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Un-blocks the user specified in the ID parameter for the
+authenticating user.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
+<li><strong>id</strong> – Specifies the ID or screen name of the user.</li>
+<li><strong>screen_name</strong> – Specifies the screen name of the user. Helpful for disambiguating when a valid screen name is also a user ID.</li>
+<li><strong>user_id</strong> – Specifies the ID of the user. Helpful for disambiguating when a valid user ID is also a valid screen name.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last"><code class="xref py py-class docutils literal"><span class="pre">User</span></code> object</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="API.blocks">
+<code class="descclassname">API.</code><code class="descname">blocks</code><span class="sig-paren">(</span><span class="optional">[</span><em>page</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#API.blocks" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Returns an array of user objects that the authenticating user is
+blocking.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><strong>page</strong> – Specifies the page of results to retrieve. Note: there are pagination limits.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">戻り値の型:</th><td class="field-body">list of <code class="xref py py-class docutils literal"><span class="pre">User</span></code> objects</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="API.blocks_ids">
+<code class="descclassname">API.</code><code class="descname">blocks_ids</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#API.blocks_ids" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Returns an array of numeric user ids the authenticating user is
+blocking.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">戻り値の型:</th><td class="field-body">list of Integers</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="spam-reporting-methods">
+<h2>Spam Reporting Methods<a class="headerlink" href="#spam-reporting-methods" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<dl class="method">
+<dt id="API.report_spam">
+<code class="descclassname">API.</code><code class="descname">report_spam</code><span class="sig-paren">(</span><span class="optional">[</span><em>id/user_id/screen_name</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#API.report_spam" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>The user specified in the id is blocked by the authenticated user and
+reported as a spammer.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
+<li><strong>id</strong> – Specifies the ID or screen name of the user.</li>
+<li><strong>screen_name</strong> – Specifies the screen name of the user. Helpful for disambiguating when a valid screen name is also a user ID.</li>
+<li><strong>user_id</strong> – Specifies the ID of the user. Helpful for disambiguating when a valid user ID is also a valid screen name.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last"><code class="xref py py-class docutils literal"><span class="pre">User</span></code> object</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="saved-searches-methods">
+<h2>Saved Searches Methods<a class="headerlink" href="#saved-searches-methods" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<dl class="method">
+<dt id="API.saved_searches">
+<code class="descclassname">API.</code><code class="descname">saved_searches</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#API.saved_searches" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Returns the authenticated user’s saved search queries.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">戻り値の型:</th><td class="field-body">list of <code class="xref py py-class docutils literal"><span class="pre">SavedSearch</span></code> objects</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="API.get_saved_search">
+<code class="descclassname">API.</code><code class="descname">get_saved_search</code><span class="sig-paren">(</span><em>id</em><span class="sig-paren">)</span><a class="headerlink" href="#API.get_saved_search" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Retrieve the data for a saved search owned by the authenticating user
+specified by the given id.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><strong>id</strong> – The id of the saved search to be retrieved.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">戻り値の型:</th><td class="field-body"><code class="xref py py-class docutils literal"><span class="pre">SavedSearch</span></code> object</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="API.create_saved_search">
+<code class="descclassname">API.</code><code class="descname">create_saved_search</code><span class="sig-paren">(</span><em>query</em><span class="sig-paren">)</span><a class="headerlink" href="#API.create_saved_search" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Creates a saved search for the authenticated user.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><strong>query</strong> – The query of the search the user would like to save.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">戻り値の型:</th><td class="field-body"><code class="xref py py-class docutils literal"><span class="pre">SavedSearch</span></code> object</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="API.destroy_saved_search">
+<code class="descclassname">API.</code><code class="descname">destroy_saved_search</code><span class="sig-paren">(</span><em>id</em><span class="sig-paren">)</span><a class="headerlink" href="#API.destroy_saved_search" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Destroys a saved search for the authenticated user. The search
+specified by id must be owned by the authenticating user.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><strong>id</strong> – The id of the saved search to be deleted.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">戻り値の型:</th><td class="field-body"><code class="xref py py-class docutils literal"><span class="pre">SavedSearch</span></code> object</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="help-methods">
+<h2>Help Methods<a class="headerlink" href="#help-methods" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<dl class="method">
+<dt id="API.search">
+<code class="descclassname">API.</code><code class="descname">search</code><span class="sig-paren">(</span><em>q</em><span class="optional">[</span>, <em>lang</em><span class="optional">]</span><span class="optional">[</span>, <em>locale</em><span class="optional">]</span><span class="optional">[</span>, <em>rpp</em><span class="optional">]</span><span class="optional">[</span>, <em>page</em><span class="optional">]</span><span class="optional">[</span>, <em>since_id</em><span class="optional">]</span><span class="optional">[</span>, <em>geocode</em><span class="optional">]</span><span class="optional">[</span>, <em>show_user</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#API.search" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Returns tweets that match a specified query.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
+<li><strong>q</strong> – the search query string</li>
+<li><strong>lang</strong> – Restricts tweets to the given language, given by an ISO 639-1 code.</li>
+<li><strong>locale</strong> – Specify the language of the query you are sending. This is intended for language-specific clients and the default should work in the majority of cases.</li>
+<li><strong>rpp</strong> – The number of tweets to return per page, up to a max of 100.</li>
+<li><strong>page</strong> – The page number (starting at 1) to return, up to a max of roughly 1500 results (based on rpp * page.</li>
+<li><strong>since_id</strong> – Returns only statuses with an ID greater than (that is, more recent than) the specified ID.</li>
+<li><strong>geocode</strong> – Returns tweets by users located within a given radius of the given latitude/longitude.  The location is preferentially taking from the Geotagging API, but will fall back to their Twitter profile. The parameter value is specified by 「latitide,longitude,radius」, where radius units must be specified as either 「mi」 (miles) or 「km」 (kilometers). Note that you cannot use the near operator via the API to geocode arbitrary locations; however you can use this geocode parameter to search near geocodes directly.</li>
+<li><strong>show_user</strong> – When true, prepends 「&lt;user&gt;:」 to the beginning of the tweet. This is useful for readers that do not display Atom’s author field. The default is false.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last">list of <code class="xref py py-class docutils literal"><span class="pre">SearchResult</span></code> objects</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="list-methods">
+<h2>List Methods<a class="headerlink" href="#list-methods" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<dl class="method">
+<dt id="API.create_list">
+<code class="descclassname">API.</code><code class="descname">create_list</code><span class="sig-paren">(</span><em>name</em><span class="optional">[</span>, <em>mode</em><span class="optional">]</span><span class="optional">[</span>, <em>description</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#API.create_list" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Creates a new list for the authenticated user. Accounts are limited to
+20 lists.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
+<li><strong>name</strong> – The name of the new list.</li>
+<li><strong>mode</strong> – Whether your list is public or private. Values can be public or private. Lists are public by default if no mode is specified.</li>
+<li><strong>description</strong> – The description of the list you are creating.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last"><code class="xref py py-class docutils literal"><span class="pre">List</span></code> object</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="API.destroy_list">
+<code class="descclassname">API.</code><code class="descname">destroy_list</code><span class="sig-paren">(</span><em>slug</em><span class="sig-paren">)</span><a class="headerlink" href="#API.destroy_list" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Deletes the specified list. Must be owned by the authenticated user.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><strong>slug</strong> – the slug name or numerical ID of the list</td>
+</tr>
+<tr class="field-even field"><th class="field-name">戻り値の型:</th><td class="field-body"><code class="xref py py-class docutils literal"><span class="pre">List</span></code> object</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="API.update_list">
+<code class="descclassname">API.</code><code class="descname">update_list</code><span class="sig-paren">(</span><em>slug</em><span class="optional">[</span>, <em>name</em><span class="optional">]</span><span class="optional">[</span>, <em>mode</em><span class="optional">]</span><span class="optional">[</span>, <em>description</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#API.update_list" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Updates the specified list. Note: this current throws a 500. Twitter
+is looking into the issue.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
+<li><strong>slug</strong> – the slug name or numerical ID of the list</li>
+<li><strong>name</strong> – What you’d like to change the lists name to.</li>
+<li><strong>mode</strong> – Whether your list is public or private. Values can be public or private. Lists are public by default if no mode is specified.</li>
+<li><strong>description</strong> – What you’d like to change the list description to.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last"><code class="xref py py-class docutils literal"><span class="pre">List</span></code> object</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="API.lists">
+<code class="descclassname">API.</code><code class="descname">lists</code><span class="sig-paren">(</span><span class="optional">[</span><em>cursor</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#API.lists" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>List the lists of the specified user. Private lists will be included
+if the authenticated users is the same as the user who’s lists are
+being returned.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><strong>cursor</strong> – Breaks the results into pages. Provide a value of  -1 to begin paging. Provide values as returned to in the response body’s next_cursor and previous_cursor attributes to page back and forth in the list.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">戻り値の型:</th><td class="field-body">list of <code class="xref py py-class docutils literal"><span class="pre">List</span></code> objects</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="API.lists_memberships">
+<code class="descclassname">API.</code><code class="descname">lists_memberships</code><span class="sig-paren">(</span><span class="optional">[</span><em>cursor</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#API.lists_memberships" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>List the lists the specified user has been added to.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><strong>cursor</strong> – Breaks the results into pages. Provide a value of  -1 to begin paging. Provide values as returned to in the response body’s next_cursor and previous_cursor attributes to page back and forth in the list.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">戻り値の型:</th><td class="field-body">list of <code class="xref py py-class docutils literal"><span class="pre">List</span></code> objects</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="API.lists_subscriptions">
+<code class="descclassname">API.</code><code class="descname">lists_subscriptions</code><span class="sig-paren">(</span><span class="optional">[</span><em>cursor</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#API.lists_subscriptions" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>List the lists the specified user follows.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><strong>cursor</strong> – Breaks the results into pages. Provide a value of  -1 to begin paging. Provide values as returned to in the response body’s next_cursor and previous_cursor attributes to page back and forth in the list.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">戻り値の型:</th><td class="field-body">list of <code class="xref py py-class docutils literal"><span class="pre">List</span></code> objects</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="API.list_timeline">
+<code class="descclassname">API.</code><code class="descname">list_timeline</code><span class="sig-paren">(</span><em>owner</em>, <em>slug</em><span class="optional">[</span>, <em>since_id</em><span class="optional">]</span><span class="optional">[</span>, <em>max_id</em><span class="optional">]</span><span class="optional">[</span>, <em>per_page</em><span class="optional">]</span><span class="optional">[</span>, <em>page</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#API.list_timeline" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Show tweet timeline for members of the specified list.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
+<li><strong>owner</strong> – the screen name of the owner of the list</li>
+<li><strong>slug</strong> – the slug name or numerical ID of the list</li>
+<li><strong>since_id</strong> – Returns only statuses with an ID greater than (that is, more recent than) the specified ID.</li>
+<li><strong>max_id</strong> – Returns only statuses with an ID less than (that is, older than) or equal to the specified ID.</li>
+<li><strong>per_page</strong> – Number of results per a page</li>
+<li><strong>page</strong> – Specifies the page of results to retrieve. Note: there are pagination limits.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last"><code class="xref py py-class docutils literal"><span class="pre">Status</span></code> オブジェクトのリスト</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="API.get_list">
+<code class="descclassname">API.</code><code class="descname">get_list</code><span class="sig-paren">(</span><em>owner</em>, <em>slug</em><span class="sig-paren">)</span><a class="headerlink" href="#API.get_list" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Show the specified list. Private lists will only be shown if the
+authenticated user owns the specified list.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
+<li><strong>owner</strong> – the screen name of the owner of the list</li>
+<li><strong>slug</strong> – the slug name or numerical ID of the list</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last"><code class="xref py py-class docutils literal"><span class="pre">List</span></code> object</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="API.add_list_member">
+<code class="descclassname">API.</code><code class="descname">add_list_member</code><span class="sig-paren">(</span><em>slug</em>, <em>id</em><span class="sig-paren">)</span><a class="headerlink" href="#API.add_list_member" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Add a member to a list. The authenticated user must own the list to be
+able to add members to it. Lists are limited to having 500 members.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
+<li><strong>slug</strong> – the slug name or numerical ID of the list</li>
+<li><strong>id</strong> – the ID of the user to add as a member</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last"><code class="xref py py-class docutils literal"><span class="pre">List</span></code> object</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="API.remove_list_member">
+<code class="descclassname">API.</code><code class="descname">remove_list_member</code><span class="sig-paren">(</span><em>slug</em>, <em>id</em><span class="sig-paren">)</span><a class="headerlink" href="#API.remove_list_member" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Removes the specified member from the list. The authenticated user
+must be the list’s owner to remove members from the list.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
+<li><strong>slug</strong> – the slug name or numerical ID of the list</li>
+<li><strong>id</strong> – the ID of the user to remove as a member</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last"><code class="xref py py-class docutils literal"><span class="pre">List</span></code> object</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="API.list_members">
+<code class="descclassname">API.</code><code class="descname">list_members</code><span class="sig-paren">(</span><em>owner</em>, <em>slug</em>, <em>cursor</em><span class="sig-paren">)</span><a class="headerlink" href="#API.list_members" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Returns the members of the specified list.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
+<li><strong>owner</strong> – the screen name of the owner of the list</li>
+<li><strong>slug</strong> – the slug name or numerical ID of the list</li>
+<li><strong>cursor</strong> – Breaks the results into pages. Provide a value of  -1 to begin paging. Provide values as returned to in the response body’s next_cursor and previous_cursor attributes to page back and forth in the list.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last">list of <code class="xref py py-class docutils literal"><span class="pre">User</span></code> objects</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="API.is_list_member">
+<code class="descclassname">API.</code><code class="descname">is_list_member</code><span class="sig-paren">(</span><em>owner</em>, <em>slug</em>, <em>id</em><span class="sig-paren">)</span><a class="headerlink" href="#API.is_list_member" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Check if a user is a member of the specified list.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
+<li><strong>owner</strong> – the screen name of the owner of the list</li>
+<li><strong>slug</strong> – the slug name or numerical ID of the list</li>
+<li><strong>id</strong> – the ID of the user to check</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last"><code class="xref py py-class docutils literal"><span class="pre">User</span></code> object if user is a member of list, otherwise False.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="API.subscribe_list">
+<code class="descclassname">API.</code><code class="descname">subscribe_list</code><span class="sig-paren">(</span><em>owner</em>, <em>slug</em><span class="sig-paren">)</span><a class="headerlink" href="#API.subscribe_list" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Make the authenticated user follow the specified list.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
+<li><strong>owner</strong> – the screen name of the owner of the list</li>
+<li><strong>slug</strong> – the slug name or numerical ID of the list</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last"><code class="xref py py-class docutils literal"><span class="pre">List</span></code> object</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="API.unsubscribe_list">
+<code class="descclassname">API.</code><code class="descname">unsubscribe_list</code><span class="sig-paren">(</span><em>owner</em>, <em>slug</em><span class="sig-paren">)</span><a class="headerlink" href="#API.unsubscribe_list" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Unsubscribes the authenticated user form the specified list.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
+<li><strong>owner</strong> – the screen name of the owner of the list</li>
+<li><strong>slug</strong> – the slug name or numerical ID of the list</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last"><code class="xref py py-class docutils literal"><span class="pre">List</span></code> object</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="API.list_subscribers">
+<code class="descclassname">API.</code><code class="descname">list_subscribers</code><span class="sig-paren">(</span><em>owner</em>, <em>slug</em><span class="optional">[</span>, <em>cursor</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#API.list_subscribers" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Returns the subscribers of the specified list.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
+<li><strong>owner</strong> – the screen name of the owner of the list</li>
+<li><strong>slug</strong> – the slug name or numerical ID of the list</li>
+<li><strong>cursor</strong> – Breaks the results into pages. Provide a value of  -1 to begin paging. Provide values as returned to in the response body’s next_cursor and previous_cursor attributes to page back and forth in the list.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last">list of <code class="xref py py-class docutils literal"><span class="pre">User</span></code> objects</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="API.is_subscribed_list">
+<code class="descclassname">API.</code><code class="descname">is_subscribed_list</code><span class="sig-paren">(</span><em>owner</em>, <em>slug</em>, <em>id</em><span class="sig-paren">)</span><a class="headerlink" href="#API.is_subscribed_list" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Check if the specified user is a subscriber of the specified list.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
+<li><strong>owner</strong> – the screen name of the owner of the list</li>
+<li><strong>slug</strong> – the slug name or numerical ID of the list</li>
+<li><strong>id</strong> – the ID of the user to check</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last"><code class="xref py py-class docutils literal"><span class="pre">User</span></code> object if user is subscribed to the list, otherwise False.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="trends-methods">
+<h2>Trends Methods<a class="headerlink" href="#trends-methods" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<dl class="method">
+<dt id="API.trends_available">
+<code class="descclassname">API.</code><code class="descname">trends_available</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#API.trends_available" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Returns the locations that Twitter has trending topic information for. The response is an array of 「locations」 that encode the location’s WOEID (a Yahoo! Where On Earth ID) and some other human-readable information such as a canonical name and country the location belongs in.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">戻り値の型:</th><td class="field-body"><code class="xref py py-class docutils literal"><span class="pre">JSON</span></code> object</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="API.trends_place">
+<code class="descclassname">API.</code><code class="descname">trends_place</code><span class="sig-paren">(</span><em>id</em><span class="optional">[</span>, <em>exclude</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#API.trends_place" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Returns the top 10 trending topics for a specific WOEID, if trending information is available for it.</p>
+<p>The response is an array of “trend” objects that encode the name of the trending topic, the query parameter that can be used to search for the topic on Twitter Search, and the Twitter Search URL.</p>
+<p>This information is cached for 5 minutes. Requesting more frequently than that will not return any more data, and will count against your rate limit usage.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
+<li><strong>id</strong> – The Yahoo! Where On Earth ID of the location to return trending information for. Global information is available by using 1 as the WOEID.</li>
+<li><strong>exclude</strong> – Setting this equal to hashtags will remove all hashtags from the trends list.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last"><code class="xref py py-class docutils literal"><span class="pre">JSON</span></code> object</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="API.trends_closest">
+<code class="descclassname">API.</code><code class="descname">trends_closest</code><span class="sig-paren">(</span><em>lat</em>, <em>long</em><span class="sig-paren">)</span><a class="headerlink" href="#API.trends_closest" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Returns the locations that Twitter has trending topic information for, closest to a specified location.</p>
+<p>The response is an array of “locations” that encode the location’s WOEID and some other human-readable information such as a canonical name and country the location belongs in.</p>
+<p>A WOEID is a Yahoo! Where On Earth ID.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
+<li><strong>lat</strong> – If provided with a long parameter the available trend locations will be sorted by distance, nearest to furthest, to the co-ordinate pair. The valid ranges for longitude is -180.0 to +180.0 (West is negative, East is positive) inclusive.</li>
+<li><strong>long</strong> – If provided with a lat parameter the available trend locations will be sorted by distance, nearest to furthest, to the co-ordinate pair. The valid ranges for longitude is -180.0 to +180.0 (West is negative, East is positive) inclusive.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last"><code class="xref py py-class docutils literal"><span class="pre">JSON</span></code> object</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="geo-methods">
+<h2>Geo Methods<a class="headerlink" href="#geo-methods" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<dl class="method">
+<dt id="API.reverse_geocode">
+<code class="descclassname">API.</code><code class="descname">reverse_geocode</code><span class="sig-paren">(</span><span class="optional">[</span><em>lat</em><span class="optional">]</span><span class="optional">[</span>, <em>long</em><span class="optional">]</span><span class="optional">[</span>, <em>accuracy</em><span class="optional">]</span><span class="optional">[</span>, <em>granularity</em><span class="optional">]</span><span class="optional">[</span>, <em>max_results</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#API.reverse_geocode" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Given a latitude and longitude, looks for places (cities and
+neighbourhoods) whose IDs can be specified in a call to
+<a class="reference internal" href="#API.update_status" title="API.update_status"><code class="xref py py-func docutils literal"><span class="pre">update_status()</span></code></a> to appear as the name of the location. This
+call provides a detailed response about the location in question;
+the <code class="xref py py-func docutils literal"><span class="pre">nearby_places()</span></code> function should be preferred for getting
+a list of places nearby without great detail.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first last simple">
+<li><strong>lat</strong> – The location’s latitude.</li>
+<li><strong>long</strong> – The location’s longitude.</li>
+<li><strong>accuracy</strong> – Specify the 「region」 in which to search, such as a number (then this is a radius in meters, but it can also take a string that is suffixed with ft to specify feet).  If this is not passed in, then it is assumed to be 0m</li>
+<li><strong>granularity</strong> – Assumed to be <a href="#id2"><span class="problematic" id="id3">`</span></a>neighborhood』 by default; can also be <a href="#id4"><span class="problematic" id="id5">`</span></a>city』.</li>
+<li><strong>max_results</strong> – A hint as to the maximum number of results to return. This is only a guideline, which may not be adhered to.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descclassname">API.</code><code class="descname">reverse_geocode</code><span class="sig-paren">(</span><span class="optional">[</span><em>lat</em><span class="optional">]</span><span class="optional">[</span>, <em>long</em><span class="optional">]</span><span class="optional">[</span>, <em>ip</em><span class="optional">]</span><span class="optional">[</span>, <em>accuracy</em><span class="optional">]</span><span class="optional">[</span>, <em>granularity</em><span class="optional">]</span><span class="optional">[</span>, <em>max_results</em><span class="optional">]</span><span class="sig-paren">)</span></dt>
+<dd><p>Given a latitude and longitude, looks for nearby places (cities and
+neighbourhoods) whose IDs can be specified in a call to
+<a class="reference internal" href="#API.update_status" title="API.update_status"><code class="xref py py-func docutils literal"><span class="pre">update_status()</span></code></a> to appear as the name of the location. This
+call provides a detailed response about the location in question;
+the <code class="xref py py-func docutils literal"><span class="pre">nearby_places()</span></code> function should be preferred for getting
+a list of places nearby without great detail.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first last simple">
+<li><strong>lat</strong> – The location’s latitude.</li>
+<li><strong>long</strong> – The location’s longitude.</li>
+<li><strong>ip</strong> – The location’s IP address. Twitter will attempt to geolocate using the IP address.</li>
+<li><strong>accuracy</strong> – Specify the 「region」 in which to search, such as a number (then this is a radius in meters, but it can also take a string that is suffixed with ft to specify feet).  If this is not passed in, then it is assumed to be 0m</li>
+<li><strong>granularity</strong> – Assumed to be <a href="#id6"><span class="problematic" id="id7">`</span></a>neighborhood』 by default; can also be <a href="#id8"><span class="problematic" id="id9">`</span></a>city』.</li>
+<li><strong>max_results</strong> – A hint as to the maximum number of results to return. This is only a guideline, which may not be adhered to.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="API.geo_id">
+<code class="descclassname">API.</code><code class="descname">geo_id</code><span class="sig-paren">(</span><em>id</em><span class="sig-paren">)</span><a class="headerlink" href="#API.geo_id" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Given <em>id</em> of a place, provide more details about that place.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><strong>id</strong> – Valid Twitter ID of a location.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+</div>
+<div class="section" id="tweepy-error-exceptions">
+<h1><code class="xref py py-mod docutils literal"><span class="pre">tweepy.error</span></code> — Exceptions<a class="headerlink" href="#tweepy-error-exceptions" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>The exceptions are available in the <code class="docutils literal"><span class="pre">tweepy</span></code> module directly,
+which means <code class="docutils literal"><span class="pre">tweepy.error</span></code> itself does not need to be imported. For
+example, <code class="docutils literal"><span class="pre">tweepy.error.TweepError</span></code> is available as <code class="docutils literal"><span class="pre">tweepy.TweepError</span></code>.</p>
+<dl class="exception">
+<dt id="TweepError">
+<em class="property">exception </em><code class="descname">TweepError</code><a class="headerlink" href="#TweepError" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>The main exception Tweepy uses. Is raised for a number of things.</p>
+<p>When a <code class="docutils literal"><span class="pre">TweepError</span></code> is raised due to an error Twitter responded with,
+the error code (<a class="reference external" href="https://dev.twitter.com/overview/api/response-codes">as described in the API documentation</a>) can be accessed
+at <code class="docutils literal"><span class="pre">TweepError.message[0]['code']</span></code>. Note, however, that <code class="docutils literal"><span class="pre">TweepError</span></code>s
+also may be raised with other things as message (for example plain
+error reason strings).</p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="RateLimitError">
+<em class="property">exception </em><code class="descname">RateLimitError</code><a class="headerlink" href="#RateLimitError" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Is raised when an API method fails due to hitting Twitter’s rate
+limit. Makes for easy handling of the rate limit specifically.</p>
+<p>Inherits from <a class="reference internal" href="#TweepError" title="TweepError"><code class="xref py py-exc docutils literal"><span class="pre">TweepError</span></code></a>, so <code class="docutils literal"><span class="pre">except</span> <span class="pre">TweepError</span></code> will
+catch a <code class="docutils literal"><span class="pre">RateLimitError</span></code> too.</p>
+</dd></dl>
+
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="streaming_how_to.html" class="btn btn-neutral" title="Tweepyでストリーミング" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2009, Joshua Roesslein.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'3.6.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/translations.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
